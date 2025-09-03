@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Treinamento - Suporte de Campo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #28a745;
+            --primary-dark: #1e7e34;
+            --primary-light: #e8f5e8;
+            --secondary-color: #f8f9fa;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+            background: var(--white);
+        }
+        
+        @media print {
+            body { margin: 0; padding: 15px; }
+            .no-print { display: none; }
+            .page-break { page-break-before: always; }
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .header h2 {
+            color: #666;
+            font-size: 18px;
+            font-weight: normal;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background: var(--secondary-color);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .section h3 {
+            color: var(--primary-color);
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section h3::before {
+            content: "▶";
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .day-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: var(--white);
+            padding: 15px 20px;
+            margin: 30px 0 20px 0;
+            border-radius: 8px;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .mission-box {
+            background: var(--primary-light);
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .mission-box::before {
+            content: "💡";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--white);
+            padding: 0 10px;
+            font-size: 20px;
+        }
+        
+        .pillars {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .pillars h4 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .pillar-item {
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: var(--white);
+            border-radius: 4px;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .activity-list {
+            background: var(--white);
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .activity-list h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .activity-item {
+            margin: 8px 0;
+            padding: 8px 12px;
+            background: var(--secondary-color);
+            border-radius: 4px;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .evaluation-section {
+            background: #f8f9fa;
+            border-left: 4px solid #6c757d;
+        }
+        
+        .assembly-section {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .lunch-break {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: var(--white);
+            padding: 10px 20px;
+            margin: 20px 0;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .checklist {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        
+        .checklist input {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        
+        .important-note {
+            background: var(--primary-light);
+            border: 1px solid var(--primary-color);
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .important-note::before {
+            content: "⚠️ IMPORTANTE: ";
+            font-weight: bold;
+            color: var(--primary-dark);
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid var(--primary-color);
+            text-align: center;
+            color: #666;
+        }
+        
+        .no-print {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 1000;
+            border: none;
+        }
+        
+        .no-print:hover {
+            background: var(--primary-dark);
+        }
+        
+        .button-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+        
+        .no-print {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .no-print:hover {
+            background: var(--primary-dark);
+        }
+        
+        .print-message {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button class="no-print" onclick="generatePDF()">📥 Baixar PDF</button>
+        <button class="no-print" onclick="window.print()">🖨️ Imprimir</button>
+    </div>
+    
+    <div id="printMessage" class="print-message">
+        Preparando PDF... Isso pode levar alguns segundos.
+    </div>
+    
+    <div class="header">
+        <h1>MANUAL DE TREINAMENTO</h1>
+        <h2>Suporte de Campo - Nível 1/Onboarding</h2>
+        <p><strong>Guia para Líderes de Filial</strong></p>
+    </div>
+
+    <div class="section">
+        <h3>📋 Objetivo do Manual</h3>
+        <p>Este manual foi desenvolvido para padronizar o treinamento de onboarding e nível 1 de suporte de campo da empresa Mottu em todas as filiais da companhia. Como líder você é responsável por garantir que cada colaborador do time receba uma capacitação completa e consistente, seguindo rigorosamente os procedimentos aqui descritos.</p>
+    </div>
+
+    <div class="day-header">DIA 1 - FUNDAMENTOS E SISTEMAS BÁSICOS</div>
+
+    <div class="section">
+        <h3>🎯 1. Apresentação da Missão do Suporte de Campo</h3>
+        
+        <div class="mission-box">
+            <strong>Discurso Obrigatório para Novos Colaboradores:</strong><br><br>
+            "Vocês serão responsáveis por realizar a manutenção emergencial nas motos dos nossos clientes, normalmente eles estarão em situações desagradáveis como: chuva, sol, frio, atrasado para uma entrega ou compromisso e por isso é muito importante que vocês sejam educados e compreensivos com eles. O propósito de vocês é maior do realizar manutenções nas motos, vocês fortalecem o corre de milhares de brasileiros que em muitos casos são marginalizados ou esquecidos pela sociedade. Através do nosso suporte, os clientes continuam garantindo o sustento deles e de suas famílias. Lembrem-se disso quando estiverem realizando um atendimento."
+        </div>
+
+        <div class="pillars">
+            <h4>🏛️ PILARES FUNDAMENTAIS (Memorização Obrigatória)</h4>
+            <div class="pillar-item">✓ Evitar o recolhimento da moto</div>
+            <div class="pillar-item">✓ Trocar apenas o que for necessário</div>
+            <div class="pillar-item">✓ Sempre que possível e seguro, direcionar o cliente para ir até a base</div>
+            <div class="pillar-item">✓ Informar todas as peças trocadas e detalhar no campo "Observação Motorista"</div>
+            <div class="pillar-item">✓ Responder ao time de analistas no chat e atender todos os serviços encaminhados</div>
+            <div class="pillar-item">✓ Executar serviços apenas com presença do cliente (exceto recolhimentos)</div>
+            <div class="pillar-item">✓ Não ultrapassar 90 km/h</div>
+            <div class="pillar-item">✓ Ser educado e respeitoso com os clientes</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>💻 2. Execução do Curso Online</h3>
+        <div class="important-note">
+            Cada colaborador deve completar o curso online seguindo as instruções do documento PDF específico de treinamento no celular. Verifique a conclusão antes de prosseguir.
+        </div> <button class="no-print">
+  <a href="assets/Instruções_Treinamento_celular.pdf" download style="color: inherit; text-decoration: none;">
+    Treinamento Online Gupy
+  </a>
+</button>
+    </div>
+
+    <div class="section">
+        <h3>📱 3. Comunicação com Cliente e Uso do App</h3>
+        
+        <div class="activity-list">
+            <h4>Módulos de Treinamento:</h4>
+            <div class="activity-item">Comunicação prestativa e educada com clientes</div>
+            <div class="activity-item">Aplicativos da tela inicial do celular de suporte</div>
+            <div class="activity-item">Login e logout no Mottu Serviços</div>
+            <div class="activity-item">Interface do aplicativo e todas as abas (Menu Inicial, Serviços, Extrato)</div>
+            <div class="activity-item">Solicitação de insumos</div>
+            <div class="activity-item">Comunicação com time de analistas</div>
+            <div class="activity-item">Sistema de bonificação e critérios de penalização</div>
+            <div class="activity-item">Utilização da aba "Avisos" para atualizações</div>
+        </div>
+    </div>
+
+    <div class="lunch-break">🍽️ INTERVALO PARA ALMOÇO</div>
+
+    <div class="section">
+        <h3>🦺 4. Entrega de EPIs e Cartão Flash</h3>
+        <div class="activity-list">
+            <h4>Checklist de Entrega:</h4>
+            <label class="checklist"><input type="checkbox"> Uniforme completo (calça, colete, bota e camiseta)</label>
+            <label class="checklist"><input type="checkbox"> Cartão flash</label>
+            <label class="checklist"><input type="checkbox"> Verificar tamanhos e condições dos itens</label>
+            <label class="checklist"><input type="checkbox"> Orientar sobre uso obrigatório</label>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>🔧 5. Montagem de Cabos</h3>
+        
+        <div class="assembly-section activity-list">
+            <h4>🔧 Procedimentos de Montagem:</h4>
+            <div class="activity-item">Montagem do cabo do acelerador</div>
+            <div class="activity-item">Ajuste de folga no manete do acelerador</div>
+            <div class="activity-item">Montagem do cabo do freio dianteiro</div>
+            <div class="activity-item">Regulagem do freio dianteiro</div>
+            <div class="activity-item">Montagem do cabo da embreagem com passagem correta</div>
+            <div class="activity-item">Regulagem da embreagem</div>
+            <div class="activity-item">Regulagem do cabo CBS</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>⚡ 6. Componentes do Sistema Elétrico</h3>
+        
+        <div class="assembly-section activity-list">
+            <h4>🔧 Procedimentos Elétricos:</h4>
+            <div class="activity-item">Troca de bateria</div>
+            <div class="activity-item">Verificação do funcionamento do estator através do farol dianteiro</div>
+            <div class="activity-item">Troca de lâmpada do farol dianteiro</div>
+            <div class="activity-item">Localização e diagnóstico dos fusíveis</div>
+            <div class="activity-item">Verificação de possíveis curtos (especial atenção em curvas dos fios)</div>
+            <div class="activity-item">Teste de faísca</div>
+            <div class="activity-item">Avaliação de bobina, cabo, cachimbo e vela</div>
+            <div class="activity-item">Montagem do conjunto de vela e cachimbo</div>
+            <div class="activity-item">Análise da qualidade da mistura através da vela</div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+    <div class="day-header">DIA 2 - COMPONENTES MECÂNICOS AVANÇADOS</div>
+
+    <div class="section">
+        <h3>🛞 1. Roda Traseira</h3>
+        
+        <div class="evaluation-section activity-list">
+            <h4>🔍 Avaliação:</h4>
+            <div class="activity-item">Localizar TWI e verificar desgaste do pneu</div>
+            <div class="activity-item">Avaliar desalinhamento da roda</div>
+            <div class="activity-item">Verificar se a roda está amassada</div>
+            <div class="activity-item">Avaliar prisioneiros da coroa</div>
+            <div class="activity-item">Avaliar porca do prisioneiro</div>
+            <div class="activity-item">Avaliar rolamento com folga</div>
+        </div>
+        
+        <div class="assembly-section activity-list">
+            <h4>🔧 Montagem:</h4>
+            <div class="activity-item">Colocar coxins da coroa</div>
+            <div class="activity-item">Passar eixo da esquerda para direita</div>
+            <div class="activity-item">Montar esticadores corretamente</div>
+            <div class="activity-item">Montar espaçadores corretamente</div>
+            <div class="activity-item">Ajustar corrente de forma idêntica nos dois lados</div>
+            <div class="activity-item">Apertar porca da flange</div>
+            <div class="activity-item">Finalizar com aperto do eixo</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>🛞 2. Roda Dianteira</h3>
+        
+        <div class="evaluation-section activity-list">
+            <h4>🔍 Avaliação:</h4>
+            <div class="activity-item">Localizar TWI e verificar desgaste do pneu</div>
+            <div class="activity-item">Avaliar desalinhamento da roda</div>
+            <div class="activity-item">Verificar se a roda está amassada</div>
+            <div class="activity-item">Avaliar rolamento com folga</div>
+        </div>
+        
+        <div class="assembly-section activity-list">
+            <h4>🔧 Montagem:</h4>
+            <div class="activity-item">Colocar espaçador na roda</div>
+            <div class="activity-item">Posicionar engrenagem do velocímetro corretamente</div>
+            <div class="activity-item">Passar eixo da esquerda para direita e apertar</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>🛑 3. Freio Traseiro</h3>
+        
+        <div class="evaluation-section activity-list">
+            <h4>🔍 Avaliação:</h4>
+            <div class="activity-item">Avaliar desgaste da lona de freio</div>
+            <div class="activity-item">Avaliar ajuste do freio</div>
+            <div class="activity-item">Avaliar se pedal ou varão estão tortos</div>
+            <div class="activity-item">Avaliar estrias do eixo came</div>
+            <div class="activity-item">Avaliar funcionamento da mola de retorno</div>
+        </div>
+        
+        <div class="assembly-section activity-list">
+            <h4>🔧 Montagem:</h4>
+            <div class="activity-item">Verificar compatibilidade das lonas com a roda</div>
+            <div class="activity-item">Montar lona sem deformar as molas</div>
+            <div class="activity-item">Posicionar alavanca conforme ponto de referência</div>
+            <div class="activity-item">Verificar presença da cupilha</div>
+            <div class="activity-item">Avaliar montagem correta do eixo came (O'ring e arruela)</div>
+            <div class="activity-item">Manter posição original das lonas</div>
+            <div class="activity-item">Ajustar regulagem do freio traseiro</div>
+            <div class="activity-item">Certificar que a roda gira livre</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>🛑 4. Freio Dianteiro</h3>
+        
+        <div class="evaluation-section activity-list">
+            <h4>🔍 Avaliação:</h4>
+            <div class="activity-item">Avaliar se o freio está travando ou borrachudo</div>
+            <div class="activity-item">Avaliar desgaste da lona através do visor do espelho</div>
+            <div class="activity-item">Verificar retorno no manete de freio</div>
+            <div class="activity-item">Avaliar desgaste do cabo de aço</div>
+            <div class="activity-item">Avaliar estrias do eixo came</div>
+            <div class="activity-item">Avaliar molas de retorno</div>
+            <div class="activity-item">Avaliar montagem correta do eixo came</div>
+        </div>
+        
+        <div class="assembly-section activity-list">
+            <h4>🔧 Montagem:</h4>
+            <div class="activity-item">Verificar compatibilidade das lonas</div>
+            <div class="activity-item">Montar lona sem deformar as molas</div>
+            <div class="activity-item">Manter posição original das lonas</div>
+            <div class="activity-item">Posicionar alavanca conforme ponto de referência</div>
+            <div class="activity-item">Posicionar cabo CBS na parte superior da alavanca</div>
+            <div class="activity-item">Posicionar cabo de freio na parte inferior da alavanca</div>
+            <div class="activity-item">Posicionar engrenagem do velocímetro</div>
+            <div class="activity-item">Checar velocímetro antes do aperto da roda</div>
+            <div class="activity-item">Certificar que a roda gira livre</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>⚙️ 5. Kit Relação</h3>
+        
+        <div class="evaluation-section activity-list">
+            <h4>🔍 Avaliação:</h4>
+            <div class="activity-item">Avaliar dentes e estrias do pinhão</div>
+            <div class="activity-item">Avaliar dentes da coroa</div>
+            <div class="activity-item">Avaliar presença e aperto dos parafusos do pinhão</div>
+            <div class="activity-item">Avaliar aperto da coroa</div>
+            <div class="activity-item">Avaliar folga da corrente</div>
+            <div class="activity-item">Avaliar alinhamento dos esticadores</div>
+        </div>
+        
+        <div class="assembly-section activity-list">
+            <h4>🔧 Montagem:</h4>
+            <div class="activity-item">Avaliar posição correta da trava</div>
+            <div class="activity-item">Fixar pinhão com a trava</div>
+            <div class="activity-item">Fixar coroa com porcas flange auto travantes</div>
+            <div class="activity-item">Certificar comprimento adequado dos prisioneiros</div>
+            <div class="activity-item">Utilizar corrente velha para passar a nova</div>
+            <div class="activity-item">Montar trava da corrente na posição correta</div>
+            <div class="activity-item">Certificar regulagens idênticas dos esticadores</div>
+            <div class="activity-item">Ajustar folga da corrente</div>
+            <div class="activity-item">Apertar todas as porcas do conjunto de freio</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>✅ Checklist Final de Treinamento</h3>
+        <div class="activity-list">
+            <label class="checklist"><input type="checkbox"> Colaborador demonstrou compreensão da missão</label>
+            <label class="checklist"><input type="checkbox"> Todos os 8 pilares foram memorizados</label>
+            <label class="checklist"><input type="checkbox"> Curso online concluído com sucesso</label>
+            <label class="checklist"><input type="checkbox"> Aplicativo dominado completamente</label>
+            <label class="checklist"><input type="checkbox"> EPIs entregues e orientações dadas</label>
+            <label class="checklist"><input type="checkbox"> Procedimentos de cabos executados corretamente</label>
+            <label class="checklist"><input type="checkbox"> Sistema elétrico compreendido</label>
+            <label class="checklist"><input type="checkbox"> Rodas dianteira e traseira dominadas</label>
+            <label class="checklist"><input type="checkbox"> Freios dianteiro e traseiro executados</label>
+            <label class="checklist"><input type="checkbox"> Kit relação montado adequadamente</label>
+        </div>
+    </div>
+
+    <div class="important-note">
+        <strong>RESPONSABILIDADE DO LÍDER:</strong> Certifique-se de que cada item foi completamente compreendido antes de avançar. A qualidade do nosso atendimento depende da excelência deste treinamento.
+    </div>
+
+
+    <script>
+        // Converte o link do PDF local para um Data URI incorporado
+        window.onload = async () => {
+            try {
+                const pdfPath = 'assets/Instruções_Treinamento_celular.pdf';
+                const response = await fetch(pdfPath);
+                if (!response.ok) return; // Não faz nada se o arquivo não for encontrado
+
+                const blob = await response.blob();
+                const reader = new FileReader();
+                
+                reader.onload = (e) => {
+                    const dataUrl = e.target.result;
+                    const link = document.querySelector('a[href="assets/Instruções_Treinamento_celular.pdf"]');
+                    if (link) {
+                        link.href = dataUrl;
+                    }
+                };
+                
+                reader.readAsDataURL(blob);
+            } catch (error) {
+                console.error('Erro ao embutir o PDF:', error);
+            }
+        };
+
+        function generatePDF() {
+            // Mostrar mensagem
+            const message = document.getElementById('printMessage');
+            message.style.display = 'block';
+            
+            // Configurações do PDF
+            const element = document.body;
+            const opt = {
+                margin: 10,
+                filename: 'Manual_Treinamento_Suporte_Campo.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            
+            // Gerar PDF
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Esconder mensagem quando concluído
+                message.style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>
+
+
