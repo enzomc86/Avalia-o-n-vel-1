@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Treinamento - Suporte de Campo</title>
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#28a745',
+                            dark: '#1e7e34',
+                            light: '#e8f5e8',
+                        },
+                        secondary: '#f8f9fa',
+                    },
+                    fontFamily: {
+                        sans: ['system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            body {
+                max-width: none !important;
+                margin: 0 !important;
+                padding: 20px !important;
+                font-size: 12px !important;
+                line-height: 1.4 !important;
+            }
+
+            .header {
+                page-break-after: avoid;
+            }
+
+            .section {
+                page-break-inside: avoid;
+                margin-bottom: 20px !important;
+            }
+
+            .day-header {
+                page-break-before: always;
+                margin-top: 0 !important;
+            }
+
+            .mission-box {
+                page-break-inside: avoid;
+            }
+
+            .pillars {
+                page-break-inside: avoid;
+            }
+        }
+
+        .pillar-item {
+            transition: all 0.3s ease;
+        }
+
+        .pillar-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(40, 167, 69, 0.2);
+        }
+
+        .floating-buttons {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 1000;
+        }
+
+        .btn-action {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+            background: linear-gradient(135deg, #1e7e34, #1abc9c);
+        }
+
+        .icon-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 leading-relaxed max-w-[210mm] mx-auto p-5 bg-white">
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons no-print">
+        <button id="downloadPdf" class="btn-action">
+            <i class='bx bx-download'></i>
+            <span>Baixar PDF</span>
+        </button>
+        <button onclick="window.print()" class="btn-action">
+            <i class='bx bx-printer'></i>
+            <span>Imprimir</span>
+        </button>
+    </div>
+
+    <!-- Loading Message -->
+    <div id="printMessage"
+        class="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-primary text-white px-6 py-3 rounded-full shadow-lg hidden z-50 flex items-center gap-2">
+        <i class='bx bx-loader-alt bx-spin'></i>
+        <span>Preparando PDF... Isso pode levar alguns segundos.</span>
+    </div>
+
+    <!-- Header -->
+    <div class="header text-center border-b-4 border-primary pb-6 mb-10">
+        <div class="icon-container justify-center mb-4">
+            <i class='bx bx-book-reader text-primary text-4xl'></i>
+        </div>
+        <h1 class="text-primary text-3xl font-bold mb-3">MANUAL DE TREINAMENTO</h1>
+        <h2 class="text-gray-600 text-xl font-normal mb-2">Suporte de Campo - Nível 1/Onboarding</h2>
+        <div class="inline-flex items-center gap-2 bg-primary-light px-4 py-2 rounded-full">
+            <i class='bx bx-user-check text-primary'></i>
+            <p class="font-bold text-primary-dark">Guia para Líderes de Filial</p>
+        </div>
+    </div>
+
+    <!-- Objetivo Section -->
+    <div
+        class="section mb-10 p-6 rounded-xl bg-gradient-to-r from-secondary to-primary-light border-l-4 border-primary shadow-sm">
+        <div class="icon-container text-primary text-xl font-bold mb-4">
+            <i class='bx bx-clipboard'></i>
+            <h3>Objetivo do Manual</h3>
+        </div>
+        <p class="text-gray-700 leading-relaxed">Este manual foi desenvolvido para padronizar o treinamento de
+            onboarding e nível 1 de suporte de campo da
+            empresa Mottu em todas as filiais da companhia. Como líder você é responsável por garantir que cada
+            colaborador do time receba uma capacitação completa e consistente, seguindo rigorosamente os procedimentos
+            aqui descritos.</p>
+    </div>
+
+    <!-- Day 1 Header -->
+    <div
+        class="day-header bg-gradient-to-r from-primary via-primary-dark to-primary text-white p-6 my-10 rounded-xl shadow-lg">
+        <div class="flex items-center justify-center gap-3">
+            <i class='bx bx-calendar-alt text-2xl'></i>
+            <h2 class="text-2xl font-bold">DIA 1 - FUNDAMENTOS E SISTEMAS BÁSICOS</h2>
+        </div>
+    </div>
+
+    <!-- Mission Section -->
+    <div class="section mb-10 p-6 rounded-xl bg-secondary border-l-4 border-primary shadow-sm">
+        <div class="icon-container text-primary text-xl font-bold mb-6">
+            <i class='bx bx-target-lock'></i>
+            <h3>1. Apresentação da Missão do Suporte de Campo</h3>
+        </div>
+
+        <div
+            class="mission-box bg-gradient-to-r from-primary-light to-white border-2 border-primary rounded-xl p-6 my-6 shadow-md">
+            <div class="flex items-center gap-2 mb-4">
+                <i class='bx bx-message-square-detail text-primary text-xl'></i>
+                <strong class="text-primary-dark text-lg">Discurso Obrigatório para Novos Colaboradores:</strong>
+            </div>
+            <div class="italic text-gray-800 leading-relaxed pl-4 border-l-2 border-primary">
+                "Vocês serão responsáveis por realizar a manutenção emergencial nas motos dos nossos clientes,
+                normalmente
+                eles estarão em situações desagradáveis como: chuva, sol, frio, atrasado para uma entrega ou compromisso
+                e
+                por isso é muito importante que vocês sejam educados e compreensivos com eles. O propósito de vocês é
+                maior
+                do que realizar manutenções nas motos, vocês fortalecem o corre de milhares de brasileiros que em muitos
+                casos
+                são marginalizados ou esquecidos pela sociedade. Através do nosso suporte, os clientes continuam
+                garantindo
+                o sustento deles e de suas famílias. Lembrem-se disso quando estiverem realizando um atendimento."
+            </div>
+        </div>
+
+        <!-- Pillars Section -->
+        <div
+            class="pillars bg-gradient-to-br from-primary-light to-white border-2 border-primary rounded-xl p-6 shadow-md">
+            <div class="icon-container text-primary-dark text-lg font-bold mb-6">
+                <i class='bx bx-buildings'></i>
+                <h4>PILARES FUNDAMENTAIS (Memorização Obrigatória)</h4>
+            </div>
+            <div class="grid gap-3">
+                <div
+                    class="pillar-item flex items-center py-3 px-4 bg-white rounded-lg border-l-4 border-primary shadow-sm">
+                    <i class='bx bx-shield-check text-primary text-lg'></i>
+                    <span>Evitar o recolhimento da moto</span>
+                </div>
+                <div
+                    class="pillar-item flex items-center py-3 px-4 bg-white rounded-lg border-l-4 border-primary shadow-sm">
+                    <i class='bx bx-wrench text-primary text-lg'></i>
+                    <span>Trocar apenas o que for necessário</span>
+                </div>
+                <div
+                    class="pillar-item flex items-center py-3 px-4 bg-white rounded-lg border-l-4 border-primary shadow-sm">
+                    <span>Sempre que possível e seguro, direcionar o cliente para ir até a base</span>
+                </div>
+                <div
+                    class="pillar-item flex items-center py-3 px-4 bg-white rounded-lg border-l-4 border-primary shadow-sm">
+                    <i class='bx bx-list-check text-primary text-lg'></i>
+                    <span>Informar todas as peças trocadas e detalhar no campo "Observação Motorista"</span>
+                </div>
+                <div
+                    class="pillar-item flex items-center py-3 px-4 bg-white rounded-lg border-l-4 border-primary shadow-sm">
+                    <i class='bx bx-chat text-primary text-lg'></i>
+                    <span>Responder ao time de analistas no chat e atender todos os serviços encaminhados</span>
+                </div>
+                <div
+                    class="pillar-item flex items-center py-3 px-4 bg-white rounded-lg border-l-4 border-primary shadow-sm">
+                    <span>Executar serviços apenas com presença do cliente (exceto recolhimentos)</span>
+                </div>
+                <div
+                    class="pillar-item flex items-center py-3 px-4 bg-white rounded-lg border-l-4 border-primary shadow-sm">
+                    <span>Não ultrapassar 90 km/h</span>
+                </div>
+                <div
+                    class="pillar-item flex items-center py-3 px-4 bg-white rounded-lg border-l-4 border-primary shadow-sm">
+                    <span>Ser educado e respeitoso com os clientes</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Online Course Section -->
+    <div class="section mb-10 p-6 rounded-xl bg-secondary border-l-4 border-primary shadow-sm">
+        <div class="icon-container justify-start text-primary text-xl font-bold mb-6">
+            <i class='bx bx-laptop'></i>
+            <h3>2. Execução do Curso Online</h3>
+        </div>
+
+        <div
+            class="important-note bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-400 rounded-xl p-6 my-6 shadow-md">
+            <div class="flex items-center gap-3 text-orange-600 font-bold mb-3">
+                <i class='bx bx-error text-xl'></i>
+                <strong class="text-lg">IMPORTANTE:</strong>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+                Cada colaborador deve completar o curso online seguindo as instruções do documento PDF específico de
+                treinamento no celular. Verifique a conclusão antes de prosseguir.
+            </p>
+        </div>
+
+        <div class="mt-6">
+            <a href="assets/Instruções_Treinamento_celular.pdf" download
+                class="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white px-6 py-3 rounded-lg font-bold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                <i class='bx bx-download'></i>
+                <span>Baixar Treinamento Online Gupy</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- PDF Generation Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        document.getElementById('downloadPdf').addEventListener('click', function () {
+            const printMessage = document.getElementById('printMessage');
+            printMessage.classList.remove('hidden');
+
+            const element = document.body;
+            const opt = {
+                margin: [0.5, 0.5, 0.5, 0.5],
+                filename: 'Manual_Treinamento_Suporte_Campo.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: {
+                    scale: 2,
+                    useCORS: true,
+                    letterRendering: true,
+                    allowTaint: true
+                },
+                jsPDF: {
+                    unit: 'in',
+                    format: 'a4',
+                    orientation: 'portrait',
+                    compress: true
+                },
+                pagebreak: {
+                    mode: ['avoid-all', 'css', 'legacy'],
+                    before: '.day-header'
+                }
+            };
+
+            html2pdf().from(element).set(opt).save().then(() => {
+                printMessage.classList.add('hidden');
+            }).catch(() => {
+                printMessage.classList.add('hidden');
+                alert('Erro ao gerar PDF. Tente novamente.');
+            });
+        });
+
+        // Smooth scroll and interaction enhancements
+        document.querySelectorAll('.pillar-item').forEach(item => {
+            item.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateX(8px)';
+            });
+
+            item.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+
+</body>
+
+</html>
