@@ -26,90 +26,7 @@
             }
         }
     </script>
-    <style>
-        @media print {
-            .no-print {
-                display: none !important;
-            }
 
-            body {
-                max-width: none !important;
-                margin: 0 !important;
-                padding: 20px !important;
-                font-size: 12px !important;
-                line-height: 1.4 !important;
-            }
-
-            .header {
-                page-break-after: avoid;
-            }
-
-            .section {
-                page-break-inside: avoid;
-                margin-bottom: 20px !important;
-            }
-
-            .day-header {
-                page-break-before: always;
-                margin-top: 0 !important;
-            }
-
-            .mission-box {
-                page-break-inside: avoid;
-            }
-
-            .pillars {
-                page-break-inside: avoid;
-            }
-        }
-
-        .pillar-item {
-            transition: all 0.3s ease;
-        }
-
-        .pillar-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 2px 8px rgba(40, 167, 69, 0.2);
-        }
-
-        .floating-buttons {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            z-index: 1000;
-        }
-
-        .btn-action {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #28a745, #20c997);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .btn-action:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
-            background: linear-gradient(135deg, #1e7e34, #1abc9c);
-        }
-
-        .icon-container {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-    </style>
 </head>
 
 <body class="font-sans text-gray-800 leading-relaxed max-w-[210mm] mx-auto p-5 bg-white">
@@ -273,55 +190,219 @@
         </div>
     </div>
 
+
+    <div class="section">
+        <h3>📱 3. Comunicação com Cliente e Uso do App</h3>
+
+        <div class="activity-list">
+            <h4>Módulos de Treinamento:</h4>
+            <div class="activity-item">Comunicação prestativa e educada com clientes</div>
+            <div class="activity-item">Aplicativos da tela inicial do celular de suporte</div>
+            <div class="activity-item">Login e logout no Mottu Serviços</div>
+            <div class="activity-item">Interface do aplicativo e todas as abas (Menu Inicial, Serviços, Extrato)</div>
+            <div class="activity-item">Solicitação de insumos</div>
+            <div class="activity-item">Comunicação com time de analistas</div>
+            <div class="activity-item">Sistema de bonificação e critérios de penalização</div>
+            <div class="activity-item">Utilização da aba "Avisos" para atualizações</div>
+        </div>
+    </div>
+
+    <div class="lunch-break">🍽️ INTERVALO PARA ALMOÇO</div>
+
+    <div class="section">
+        <h3>🦺 4. Entrega de EPIs e Cartão Flash</h3>
+        <div class="activity-list">
+            <h4>Checklist de Entrega:</h4>
+            <label class="checklist"><input type="checkbox"> Uniforme completo (calça, colete, bota e camiseta)</label>
+            <label class="checklist"><input type="checkbox"> Cartão flash</label>
+            <label class="checklist"><input type="checkbox"> Verificar tamanhos e condições dos itens</label>
+            <label class="checklist"><input type="checkbox"> Orientar sobre uso obrigatório</label>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>🔧 5. Montagem de Cabos</h3>
+
+        <div class="assembly-section activity-list">
+            <h4>🔧 Procedimentos de Montagem:</h4>
+            <div class="activity-item">Montagem do cabo do acelerador</div>
+            <div class="activity-item">Ajuste de folga no manete do acelerador</div>
+            <div class="activity-item">Montagem do cabo do freio dianteiro</div>
+            <div class="activity-item">Regulagem do freio dianteiro</div>
+            <div class="activity-item">Montagem do cabo da embreagem com passagem correta</div>
+            <div class="activity-item">Regulagem da embreagem</div>
+            <div class="activity-item">Regulagem do cabo CBS</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>⚡ 6. Componentes do Sistema Elétrico</h3>
+
+        <div class="assembly-section activity-list">
+            <h4>🔧 Procedimentos Elétricos:</h4>
+            <div class="activity-item">Troca de bateria</div>
+            <div class="activity-item">Verificação do funcionamento do estator através do farol dianteiro</div>
+            <div class="activity-item">Troca de lâmpada do farol dianteiro</div>
+            <div class="activity-item">Localização e diagnóstico dos fusíveis</div>
+            <div class="activity-item">Verificação de possíveis curtos (especial atenção em curvas dos fios)</div>
+            <div class="activity-item">Teste de faísca</div>
+            <div class="activity-item">Avaliação de bobina, cabo, cachimbo e vela</div>
+            <div class="activity-item">Montagem do conjunto de vela e cachimbo</div>
+            <div class="activity-item">Análise da qualidade da mistura através da vela</div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+    <div class="day-header">DIA 2 - COMPONENTES MECÂNICOS AVANÇADOS</div>
+
+    <div class="section">
+        <h3>🛞 1. Roda Traseira</h3>
+
+        <div class="evaluation-section activity-list">
+            <h4>🔍 Avaliação:</h4>
+            <div class="activity-item">Localizar TWI e verificar desgaste do pneu</div>
+            <div class="activity-item">Avaliar desalinhamento da roda</div>
+            <div class="activity-item">Verificar se a roda está amassada</div>
+            <div class="activity-item">Avaliar prisioneiros da coroa</div>
+            <div class="activity-item">Avaliar porca do prisioneiro</div>
+            <div class="activity-item">Avaliar rolamento com folga</div>
+        </div>
+
+        <div class="assembly-section activity-list">
+            <h4>🔧 Montagem:</h4>
+            <div class="activity-item">Colocar coxins da coroa</div>
+            <div class="activity-item">Passar eixo da esquerda para direita</div>
+            <div class="activity-item">Montar esticadores corretamente</div>
+            <div class="activity-item">Montar espaçadores corretamente</div>
+            <div class="activity-item">Ajustar corrente de forma idêntica nos dois lados</div>
+            <div class="activity-item">Apertar porca da flange</div>
+            <div class="activity-item">Finalizar com aperto do eixo</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>🛞 2. Roda Dianteira</h3>
+
+        <div class="evaluation-section activity-list">
+            <h4>🔍 Avaliação:</h4>
+            <div class="activity-item">Localizar TWI e verificar desgaste do pneu</div>
+            <div class="activity-item">Avaliar desalinhamento da roda</div>
+            <div class="activity-item">Verificar se a roda está amassada</div>
+            <div class="activity-item">Avaliar rolamento com folga</div>
+        </div>
+
+        <div class="assembly-section activity-list">
+            <h4>🔧 Montagem:</h4>
+            <div class="activity-item">Colocar espaçador na roda</div>
+            <div class="activity-item">Posicionar engrenagem do velocímetro corretamente</div>
+            <div class="activity-item">Passar eixo da esquerda para direita e apertar</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>🛑 3. Freio Traseiro</h3>
+
+        <div class="evaluation-section activity-list">
+            <h4>🔍 Avaliação:</h4>
+            <div class="activity-item">Avaliar desgaste da lona de freio</div>
+            <div class="activity-item">Avaliar ajuste do freio</div>
+            <div class="activity-item">Avaliar se pedal ou varão estão tortos</div>
+            <div class="activity-item">Avaliar estrias do eixo came</div>
+            <div class="activity-item">Avaliar funcionamento da mola de retorno</div>
+        </div>
+
+        <div class="assembly-section activity-list">
+            <h4>🔧 Montagem:</h4>
+            <div class="activity-item">Verificar compatibilidade das lonas com a roda</div>
+            <div class="activity-item">Montar lona sem deformar as molas</div>
+            <div class="activity-item">Posicionar alavanca conforme ponto de referência</div>
+            <div class="activity-item">Verificar presença da cupilha</div>
+            <div class="activity-item">Avaliar montagem correta do eixo came (O'ring e arruela)</div>
+            <div class="activity-item">Manter posição original das lonas</div>
+            <div class="activity-item">Ajustar regulagem do freio traseiro</div>
+            <div class="activity-item">Certificar que a roda gira livre</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>🛑 4. Freio Dianteiro</h3>
+
+        <div class="evaluation-section activity-list">
+            <h4>🔍 Avaliação:</h4>
+            <div class="activity-item">Avaliar se o freio está travando ou borrachudo</div>
+            <div class="activity-item">Avaliar desgaste da lona através do visor do espelho</div>
+            <div class="activity-item">Verificar retorno no manete de freio</div>
+            <div class="activity-item">Avaliar desgaste do cabo de aço</div>
+            <div class="activity-item">Avaliar estrias do eixo came</div>
+            <div class="activity-item">Avaliar molas de retorno</div>
+            <div class="activity-item">Avaliar montagem correta do eixo came</div>
+        </div>
+
+        <div class="assembly-section activity-list">
+            <h4>🔧 Montagem:</h4>
+            <div class="activity-item">Verificar compatibilidade das lonas</div>
+            <div class="activity-item">Montar lona sem deformar as molas</div>
+            <div class="activity-item">Manter posição original das lonas</div>
+            <div class="activity-item">Posicionar alavanca conforme ponto de referência</div>
+            <div class="activity-item">Posicionar cabo CBS na parte superior da alavanca</div>
+            <div class="activity-item">Posicionar cabo de freio na parte inferior da alavanca</div>
+            <div class="activity-item">Posicionar engrenagem do velocímetro</div>
+            <div class="activity-item">Checar velocímetro antes do aperto da roda</div>
+            <div class="activity-item">Certificar que a roda gira livre</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>⚙️ 5. Kit Relação</h3>
+
+        <div class="evaluation-section activity-list">
+            <h4>🔍 Avaliação:</h4>
+            <div class="activity-item">Avaliar dentes e estrias do pinhão</div>
+            <div class="activity-item">Avaliar dentes da coroa</div>
+            <div class="activity-item">Avaliar presença e aperto dos parafusos do pinhão</div>
+            <div class="activity-item">Avaliar aperto da coroa</div>
+            <div class="activity-item">Avaliar folga da corrente</div>
+            <div class="activity-item">Avaliar alinhamento dos esticadores</div>
+        </div>
+
+        <div class="assembly-section activity-list">
+            <h4>🔧 Montagem:</h4>
+            <div class="activity-item">Avaliar posição correta da trava</div>
+            <div class="activity-item">Fixar pinhão com a trava</div>
+            <div class="activity-item">Fixar coroa com porcas flange auto travantes</div>
+            <div class="activity-item">Certificar comprimento adequado dos prisioneiros</div>
+            <div class="activity-item">Utilizar corrente velha para passar a nova</div>
+            <div class="activity-item">Montar trava da corrente na posição correta</div>
+            <div class="activity-item">Certificar regulagens idênticas dos esticadores</div>
+            <div class="activity-item">Ajustar folga da corrente</div>
+            <div class="activity-item">Apertar todas as porcas do conjunto de freio</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>✅ Checklist Final de Treinamento</h3>
+        <div class="activity-list">
+            <label class="checklist"><input type="checkbox"> Colaborador demonstrou compreensão da missão</label>
+            <label class="checklist"><input type="checkbox"> Todos os 8 pilares foram memorizados</label>
+            <label class="checklist"><input type="checkbox"> Curso online concluído com sucesso</label>
+            <label class="checklist"><input type="checkbox"> Aplicativo dominado completamente</label>
+            <label class="checklist"><input type="checkbox"> EPIs entregues e orientações dadas</label>
+            <label class="checklist"><input type="checkbox"> Procedimentos de cabos executados corretamente</label>
+            <label class="checklist"><input type="checkbox"> Sistema elétrico compreendido</label>
+            <label class="checklist"><input type="checkbox"> Rodas dianteira e traseira dominadas</label>
+            <label class="checklist"><input type="checkbox"> Freios dianteiro e traseiro executados</label>
+            <label class="checklist"><input type="checkbox"> Kit relação montado adequadamente</label>
+        </div>
+    </div>
+
+    <div class="important-note">
+        <strong>RESPONSABILIDADE DO LÍDER:</strong> Certifique-se de que cada item foi completamente compreendido antes
+        de avançar. A qualidade do nosso atendimento depende da excelência deste treinamento.
+    </div>
+
     <!-- PDF Generation Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script>
-        document.getElementById('downloadPdf').addEventListener('click', function () {
-            const printMessage = document.getElementById('printMessage');
-            printMessage.classList.remove('hidden');
 
-            const element = document.body;
-            const opt = {
-                margin: [0.5, 0.5, 0.5, 0.5],
-                filename: 'Manual_Treinamento_Suporte_Campo.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: {
-                    scale: 2,
-                    useCORS: true,
-                    letterRendering: true,
-                    allowTaint: true
-                },
-                jsPDF: {
-                    unit: 'in',
-                    format: 'a4',
-                    orientation: 'portrait',
-                    compress: true
-                },
-                pagebreak: {
-                    mode: ['avoid-all', 'css', 'legacy'],
-                    before: '.day-header'
-                }
-            };
-
-            html2pdf().from(element).set(opt).save().then(() => {
-                printMessage.classList.add('hidden');
-            }).catch(() => {
-                printMessage.classList.add('hidden');
-                alert('Erro ao gerar PDF. Tente novamente.');
-            });
-        });
-
-        // Smooth scroll and interaction enhancements
-        document.querySelectorAll('.pillar-item').forEach(item => {
-            item.addEventListener('mouseenter', function () {
-                this.style.transform = 'translateX(8px)';
-            });
-
-            item.addEventListener('mouseleave', function () {
-                this.style.transform = 'translateX(0)';
-            });
-        });
-    </script>
 
 </body>
 
