@@ -2,746 +2,2413 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manual de Treinamento - Slides</title>
-    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Icons + Tailwind + html2pdf -->
+    <link href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./server.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <script>
+        // Configuração do Tailwind com cores da Mottu
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: {
-                            DEFAULT: '#28a745',
-                            dark: '#1e7e34',
+                        mottu: {
+                            primary: '#28a745',
+                            secondary: '#1e7e34',
+                            accent: '#34d058',
                             light: '#e8f5e8',
+                            background: '#FFFFFF',
+                            text: '#1e7e34',
                         }
-                    }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
                 }
             }
-        }
+        };
     </script>
-</head>
-
-<body class="bg-gray-900 text-white font-sans overflow-hidden">
-    <button id="downloadBtn"
-        class="download-btn fixed top-4 left-4 bg-slate-200 border-2 text-green-700 hover:text-slate-200 border-green-700 hover:bg-green-700 hover:border-slate-200 transition-all duration-300 ease-in-out  px-4 py-2 rounded-lg shadow-lg flex items-center gap-2 z-50">
-        <i class='bx bx-download'></i> Baixar PDF
-    </button>
-    <!-- Slide Container -->
-    <div id="slideContainer" class="w-full h-screen relative">
-
-        <!-- Slide 1: Título -->
-        <div class="slide slide-green active min-h-screen flex flex-col justify-center items-center text-center p-8">
-            <div class="mb-8">
-                <i class='bx bx-book-reader text-8xl mb-6'></i>
-                <h1 class="text-5xl font-bold mb-4">GUIA DE TREINAMENTO MOTTU</h1>
-                <h2 class="text-2xl mb-6">MANUAL PARA LÍDERES</h2>
-            </div>
-        </div>
-
-        <!-- Slide 2: Objetivo -->
-        <div class="slide slide-white min-h-screen flex flex-col justify-center items-center text-center p-12">
-            <div class="max-w-4xl mx-auto">
-                <p class="text-xl leading-relaxed">
-                    Este manual foi desenvolvido para padronizar o treinamento de onboarding e nível 1 de suporte de campo da empresa Mottu em todas as filiais da companhia. Como líder, você é responsável por garantir que cada colaborador do time receba uma capacitação completa e consistente, seguindo rigorosamente os procedimentos aqui descritos.
-                </p>
-            </div>
-        </div>
-
-        <!-- Slide 3: Informações Gerais -->
-        <div class="slide slide-green min-h-screen flex flex-col justify-center items-center p-8 text-center">
-            <h2 class="text-4xl font-bold mb-6"> Objetivos do Programa & Informações Gerais</h2>
-            <div class="text-left space-y-2">
-                <p><span class="font-bold"> Duração por dia:</span> 12 horas</p>
-                <p><span class="font-bold">Horários:</span> Manhã 09:00 - 13:00 | Almoço 13:00 - 14:00 | Tarde 14:00 - 21:00</p>
-                <p><span class="font-bold">Nível:</span> Suporte de Campo - Nível 1/Onboarding</p>
-            </div>
-        </div>
-
-        <!-- Slide 4: Introdução e Objetivos -->
-        <div class="slide slide-white min-h-screen flex flex-col justify-center items-center p-8">
-            <h2 class="text-4xl font-bold mb-4"> INTRODUÇÃO E OBJETIVOS</h2>
-            <ul class="list-inside text-left space-y-2">
-                <li> Capacitar prestadores para atuarem no suporte de campo</li>
-                <li> Garantir atendimento padronizado e de qualidade</li>
-                <li> Desenvolver competências técnicas específicas</li>
-                <li> Promover cultura organizacional e valores</li>
-                <li> Duração: 2 dias (12 horas cada dia)</li>
-                <li> Modalidade: Presencial</li>
-                <li> Público: Prestadores de suporte</li>
-                <li> Certificação: Obrigatória</li>
-            </ul>
-        </div>
-
-        <!-- Slide 5: Cronograma Geral -->
-        <div class="slide slide-green min-h-screen flex flex-col justify-center items-center p-8">
-            <h2 class="text-4xl font-bold mb-4">CRONOGRAMA GERAL</h2>
-            <table class="table-auto bg-white/20 rounded-lg">
-                <thead class="bg-white/30">
-                    <tr>
-                        <th class="px-4 py-2">DIA</th>
-                        <th class="px-4 py-2">PERÍODO</th>
-                        <th class="px-4 py-2">HORÁRIO</th>
-                        <th class="px-4 py-2">CARGA HORÁRIA</th>
-                        <th class="px-4 py-2">MÓDULOS</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="border-t border-white/30 px-4 py-2">Dia 1</td>
-                        <td class="border-t border-white/30 px-4 py-2">Manhã</td>
-                        <td class="border-t border-white/30 px-4 py-2">09:00 - 13:00</td>
-                        <td class="border-t border-white/30 px-4 py-2">4 horas</td>
-                        <td class="border-t border-white/30 px-4 py-2">Módulos 1, 2 e 3</td>
-                    </tr>
-                    <tr>
-                        <td class="border-t border-white/30 px-4 py-2">Dia 1</td>
-                        <td class="border-t border-white/30 px-4 py-2">Tarde</td>
-                        <td class="border-t border-white/30 px-4 py-2">14:00 - 21:00</td>
-                        <td class="border-t border-white/30 px-4 py-2">8 horas</td>
-                        <td class="border-t border-white/30 px-4 py-2">Módulos 4, 5 e 6</td>
-                    </tr>
-                    <tr>
-                        <td class="border-t border-white/30 px-4 py-2">Dia 2</td>
-                        <td class="border-t border-white/30 px-4 py-2">Manhã</td>
-                        <td class="border-t border-white/30 px-4 py-2">09:00 - 13:00</td>
-                        <td class="border-t border-white/30 px-4 py-2">4 horas</td>
-                        <td class="border-t border-white/30 px-4 py-2">Módulos 7 e 8</td>
-                    </tr>
-                    <tr>
-                        <td class="border-t border-white/30 px-4 py-2">Dia 2</td>
-                        <td class="border-t border-white/30 px-4 py-2">Tarde</td>
-                        <td class="border-t border-white/30 px-4 py-2">14:00 - 21:00</td>
-                        <td class="border-t border-white/30 px-4 py-2">8 horas</td>
-                        <td class="border-t border-white/30 px-4 py-2">Módulos 9, 10 e 11</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Slide 6: Módulo 1 -->
-        <div class="slide slide-white min-h-screen flex flex-col justify-center items-center p-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">MÓDULO 1: MISSÃO E PILARES DO SUPORTE DE CAMPO</h2>
-            <div class="mb-4">
-                <p><strong> Duração:</strong> 30min</p>
-                <p><strong> Objetivo:</strong> Alinhar propósito e valores</p>
-                <p><strong> Tipo:</strong> Teórico + Discussão</p>
-            </div>
-            <div class="bg-gray-100 p-4 rounded-lg max-w-2xl">
-                <h3 class="font-bold mb-2"> Apresentação da Missão</h3>
-                <p class="italic">"Vocês serão responsáveis por realizar a manutenção emergencial nas motos dos nossos clientes, normalmente eles estarão em situações desagradáveis como: chuva, sol, frio, atrasado para uma entrega ou compromisso e por isso é muito importante que vocês sejam educados e compreensivos com eles. O propósito de vocês é maior do realizar manutenções nas motos, vocês fortalecem o corre de milhares de brasileiros que em muitos casos são marginalizados ou esquecidos pela sociedade."</p>
-            </div>
-        </div>
-
-        <!-- Slide 7: Pilares Operacionais -->
-        <div class="slide slide-green min-h-screen flex flex-col justify-center items-center p-8">
-            <h2 class="text-4xl font-bold mb-4"> Pilares Operacionais (OBRIGATÓRIOS)</h2>
-            <ol class="list-decimal list-inside text-left space-y-1 grid grid-cols-2 gap-x-8">
-                <li>Evitar o recolhimento da moto</li>
-                <li>Trocar apenas o que for necessário</li>
-                <li>Direcionar cliente para a base quando possível e seguro</li>
-                <li>Informar todas as peças trocadas no serviço</li>
-                <li>Preencher campo "Observação Motorista" com detalhes</li>
-                <li>Responder ao time de analistas no chat</li>
-                <li>Executar serviços apenas com presença do cliente, exceto recolhimentos</li>
-                <li>Não ultrapassar velocidade de 90 km/h</li>
-                <li>Manter educação e respeito com os clientes</li>
-            </ol>
-        </div>
-
-        <!-- Slide 8: Módulo 2 -->
-        <div class="slide slide-white min-h-screen flex flex-col justify-center items-center p-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">MÓDULO 2: CURSO ONLINE OBRIGATÓRIO</h2>
-            <div class="mb-4">
-                <p><strong>⏰ Duração:</strong> 3h00min</p>
-                <p><strong>🎯 Objetivo:</strong> Certificação digital</p>
-                <p><strong>📋 Tipo:</strong> Prático Online</p>
-            </div>
-            <div class="bg-gray-100 p-4 rounded-lg max-w-2xl text-left">
-                <h3 class="font-bold mb-2 text-center">📝 Procedimento</h3>
-                <ul class="list-disc list-inside space-y-1">
-                    <li>Acompanhar execução passo a passo</li>
-                    <li>Validar nota mínima de 8 em todas as lições</li>
-                    <li>Validar conclusão do curso por cada participante</li>
-                </ul>
-                <h3 class="font-bold mb-2 mt-4 text-center">📋 Recursos Necessários</h3>
-                <ul class="list-disc list-inside space-y-1">
-                    <li>Utilizar PDF de apoio específico (enviado junto com este guia)</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Slide 9: Módulo 3 -->
-        <div class="slide slide-green min-h-screen flex flex-col justify-center items-center p-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">MÓDULO 3: COMUNICAÇÃO E USO DE APLICATIVOS</h2>
-            <div class="mb-4">
-                <p><strong>⏰ Duração:</strong> 30min</p>
-                <p><strong>🎯 Objetivo:</strong> Comunicação e ferramentas</p>
-                <p><strong>📋 Tipo:</strong> Teórico + Prático</p>
-            </div>
-            <div class="text-left grid grid-cols-2 gap-x-8 max-w-4xl">
-                <div>
-                    <h3 class="font-bold mb-2">🗣️ Comunicação com Clientes</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Técnicas de comunicação prestativa e educada</li>
-                        <li>Manutenção do respeito e profissionalismo</li>
-                        <li>Gestão de situações adversas</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold mb-2">📱 Aplicativo Mottu Serviços</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Login e logout no sistema</li>
-                        <li>Interface e navegação</li>
-                        <li>Funcionalidades de cada aba</li>
-                        <li>Solicitação de insumos</li>
-                        <li>Comunicação com analistas via chat</li>
-                    </ul>
-                </div>
-                <div class="mt-4">
-                    <h3 class="font-bold mb-2">💰 Sistema de Bonificação</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Critérios de bonificação</li>
-                        <li>Penalizações e como evitá-las</li>
-                        <li>Utilização da aba "Avisos" para atualizações</li>
-                    </ul>
-                </div>
-                <div class="mt-4">
-                    <h3 class="font-bold mb-2">📋 Recursos Necessários</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Celulares com internet e app baixado</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 10: Almoço -->
-        <div class="slide slide-white min-h-screen flex flex-col justify-center items-center text-center p-8">
-            <i class='bx bx-restaurant text-8xl mb-6'></i>
-            <h2 class="text-5xl font-bold mb-4">INTERVALO PARA ALMOÇO</h2>
-            <h3 class="text-3xl">1 HORA</h3>
-        </div>
-
-        <!-- Slide 11: Módulo 4 -->
-        <div class="slide slide-green min-h-screen flex flex-col justify-center items-center p-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">🦺 MÓDULO 4: ENTREGA DE EQUIPAMENTOS</h2>
-            <div class="mb-4">
-                <p><strong>⏰ Duração:</strong> 30min</p>
-                <p><strong>🎯 Objetivo:</strong> Fornecimento de EPIs</p>
-                <p><strong>📋 Tipo:</strong> Administrativo</p>
-            </div>
-            <div class="bg-white/20 p-4 rounded-lg text-left">
-                <h3 class="font-bold mb-2 text-center">📦 Itens Obrigatórios</h3>
-                <ul class="list-disc list-inside space-y-1">
-                    <li>Uniforme completo (calça, colete, bota, camiseta)</li>
-                    <li>Cartão flash</li>
-                    <li>Verificação de tamanhos e ajustes</li>
-                    <li>Orientações sobre uso e conservação</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Slide 12: Módulo 5 -->
-        <div class="slide slide-white min-h-screen flex flex-col justify-center items-center p-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">🔧 MÓDULO 5: MONTAGEM DE CABOS</h2>
-            <div class="mb-4">
-                <p><strong>⏰ Duração:</strong> 3h00min</p>
-                <p><strong>🎯 Objetivo:</strong> Competências técnicas em transmissão</p>
-                <p><strong>📋 Tipo:</strong> Prático Hands-on</p>
-            </div>
-            <div class="text-left grid grid-cols-3 gap-x-8 max-w-4xl">
-                <div>
-                    <h3 class="font-bold mb-2">Sistema de Aceleração</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Montagem do cabo do acelerador</li>
-                        <li>Ajuste de folga no manete do acelerador</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold mb-2">🛑 Sistema de Frenagem</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Montagem do cabo do freio dianteiro</li>
-                        <li>Regulagem do freio dianteiro</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold mb-2">⚙️ Sistema de Embreagem</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Montagem do cabo da embreagem com passagem correta</li>
-                        <li>Regulagem da embreagem</li>
-                        <li>Regulagem do cabo CBS</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-4 text-left">
-                <h3 class="font-bold mb-2">📋 Recursos Necessários</h3>
-                <ul class="list-disc list-inside space-y-1">
-                    <li>Motocicletas para prática</li>
-                    <li>Ferramentas específicas</li>
-                    <li>Cabos novos e usados para comparação</li>
-                    <li>Checklist de procedimentos</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Slide 13: Módulo 6 -->
-        <div class="slide slide-green min-h-screen flex flex-col justify-center items-center p-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">⚡ MÓDULO 6: COMPONENTES DO SISTEMA ELÉTRICO</h2>
-            <div class="mb-4">
-                <p><strong>⏰ Duração:</strong> 4h00min</p>
-                <p><strong>🎯 Objetivo:</strong> Diagnóstico e reparo elétrico</p>
-                <p><strong>📋 Tipo:</strong> Prático Técnico</p>
-            </div>
-            <div class="text-left grid grid-cols-2 gap-x-8 max-w-5xl">
-                <div>
-                    <h3 class="font-bold mb-2">🔋 Sistema de Alimentação</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Troca de bateria</li>
-                        <li>Verificação do funcionamento do estator via farol dianteiro</li>
-                    </ul>
-                    <h3 class="font-bold mb-2 mt-4">💡 Sistema de Iluminação</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Troca de lâmpada do farol dianteiro</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold mb-2">🔥 Sistema de Ignição</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Localização e diagnóstico de fusíveis</li>
-                        <li>Teste de faísca</li>
-                        <li>Avaliação de bobina, cabo, cachimbo e vela</li>
-                        <li>Montagem do conjunto vela/cachimbo</li>
-                        <li>Análise da qualidade da mistura através da vela</li>
-                    </ul>
-                </div>
-                <div class="mt-4 col-span-2">
-                    <h3 class="font-bold mb-2">🔍 Diagnóstico de Problemas</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Identificação de possíveis curtos-circuitos</li>
-                        <li>Locais críticos de verificação de fios</li>
-                    </ul>
-                </div>
-                <div class="mt-4 col-span-2">
-                    <h3 class="font-bold mb-2">📋 Recursos Necessários</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Ferramentas elétricas básicas</li>
-                        <li>Multímetro</li>
-                        <li>Componentes elétricos variados</li>
-                        <li>Motocicletas para prática</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 14: Dia 2 Header -->
-        <div class="slide slide-white min-h-screen flex flex-col justify-center items-center text-center p-8">
-            <i class='bx bx-calendar-check text-8xl mb-6'></i>
-            <h2 class="text-5xl font-bold mb-4">DIA 2</h2>
-            <h3 class="text-2xl">CICLISTICA BÁSICA</h3>
-        </div>
-
-        <!-- Slide 15: Módulo 7 -->
-        <div class="slide slide-green min-h-screen flex flex-col justify-center items-center p-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">🛞 MÓDULO 7: SISTEMA RODA TRASEIRA</h2>
-            <div class="mb-4">
-                <p><strong>⏰ Duração:</strong> 2h00min</p>
-                <p><strong>🎯 Objetivo:</strong> Avaliação e montagem roda traseira</p>
-                <p><strong>📋 Tipo:</strong> Prático Avançado</p>
-            </div>
-            <div class="text-left grid grid-cols-2 gap-x-8 max-w-4xl">
-                <div>
-                    <h3 class="font-bold mb-2">🔍 Avaliação Técnica</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Localização do TWI e verificação do desgaste do pneu</li>
-                        <li>Avaliação de desalinhamento da roda</li>
-                        <li>Verificação de danos (roda amassada)</li>
-                        <li>Avaliação dos prisioneiros da coroa</li>
-                        <li>Verificação da porca do prisioneiro</li>
-                        <li>Diagnóstico de folga no rolamento</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold mb-2">🔧 Procedimentos de Montagem</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Instalação dos coxins da coroa</li>
-                        <li>Passagem correta do eixo (esquerda para direita)</li>
-                        <li>Montagem adequada dos esticadores</li>
-                        <li>Posicionamento correto dos espaçadores</li>
-                        <li>Ajuste idêntico da corrente em ambos os lados</li>
-                        <li>Sequência de aperto (porca da flange → eixo)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 16: Módulo 8 -->
-        <div class="slide slide-white min-h-screen flex flex-col justify-center items-center p-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">🛞 MÓDULO 8: SISTEMA RODA DIANTEIRA</h2>
-            <div class="mb-4">
-                <p><strong>⏰ Duração:</strong> 2h00min</p>
-                <p><strong>🎯 Objetivo:</strong> Competências na roda dianteira</p>
-                <p><strong>📋 Tipo:</strong> Prático Técnico</p>
-            </div>
-            <div class="text-left grid grid-cols-2 gap-x-8 max-w-4xl">
-                <div>
-                    <h3 class="font-bold mb-2">🔍 Avaliação Técnica</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Localização do TWI e verificação do desgaste</li>
-                        <li>Avaliação de desalinhamento</li>
-                        <li>Verificação de danos estruturais</li>
-                        <li>Diagnóstico de folga no rolamento</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold mb-2">🔧 Procedimentos de Montagem</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Posicionamento do espaçador na roda</li>
-                        <li>Instalação correta da engrenagem do velocímetro</li>
-                        <li>Passagem e aperto adequado do eixo</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 17: Almoço 2 -->
-        <div class="slide slide-green min-h-screen flex flex-col justify-center items-center text-center p-8">
-            <i class='bx bx-restaurant text-8xl mb-6'></i>
-            <h2 class="text-5xl font-bold mb-4">INTERVALO PARA ALMOÇO</h2>
-            <h3 class="text-3xl">1 HORA</h3>
-        </div>
-
-        <!-- Slide 18: Módulo 9 -->
-        <div class="slide slide-white min-h-screen flex flex-col justify-center items-center p-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">🛑 MÓDULO 9: SISTEMA FREIO TRASEIRO</h2>
-            <div class="mb-4">
-                <p><strong>⏰ Duração:</strong> 2h00min</p>
-                <p><strong>🎯 Objetivo:</strong> Manutenção do freio traseiro</p>
-                <p><strong>📋 Tipo:</strong> Prático Especializado</p>
-            </div>
-            <div class="text-left grid grid-cols-2 gap-x-8 max-w-4xl">
-                <div>
-                    <h3 class="font-bold mb-2">🔍 Diagnóstico</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Avaliação do desgaste da lona de freio</li>
-                        <li>Verificação do ajuste do freio</li>
-                        <li>Análise de componentes (pedal, varão, estrias do eixo came)</li>
-                        <li>Teste da mola de retorno</li>
-                        <li>Verificação de compatibilidade das lonas</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold mb-2">🔧 Montagem e Ajustes</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Montagem sem deformação das molas</li>
-                        <li>Posicionamento correto da alavanca de freio</li>
-                        <li>Verificação da cupilha</li>
-                        <li>Montagem adequada do eixo came (O'ring e arruela)</li>
-                        <li>Regulagem final e teste de funcionamento</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 19: Módulo 10 -->
-        <div class="slide slide-green min-h-screen flex flex-col justify-center items-center p-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">🛑 MÓDULO 10: SISTEMA FREIO DIANTEIRO</h2>
-            <div class="mb-4">
-                <p><strong>⏰ Duração:</strong> 2h00min</p>
-                <p><strong>🎯 Objetivo:</strong> Manutenção do freio dianteiro</p>
-                <p><strong>📋 Tipo:</strong> Prático Avançado</p>
-            </div>
-            <div class="text-left grid grid-cols-2 gap-x-8 max-w-4xl">
-                <div>
-                    <h3 class="font-bold mb-2">🔍 Diagnóstico Avançado</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Identificação de travamento ou problema "borrachudo"</li>
-                        <li>Avaliação do desgaste via visor do espelho</li>
-                        <li>Teste de retorno do manete</li>
-                        <li>Análise do cabo de aço, estrias e molas</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold mb-2">🔧 Montagem Técnica</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Posicionamento correto dos cabos CBS e freio dianteiro</li>
-                        <li>Instalação da engrenagem do velocímetro</li>
-                        <li>Verificação do velocímetro antes do aperto</li>
-                        <li>Teste final de funcionamento</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 20: Módulo 11 -->
-        <div class="slide slide-white min-h-screen flex flex-col justify-center items-center p-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">⚙️ MÓDULO 11: KIT RELAÇÃO</h2>
-            <div class="mb-4">
-                <p><strong>⏰ Duração:</strong> 3h00min</p>
-                <p><strong>🎯 Objetivo:</strong> Manutenção do sistema de transmissão</p>
-                <p><strong>📋 Tipo:</strong> Prático Especializado</p>
-            </div>
-            <div class="text-left grid grid-cols-2 gap-x-8 max-w-4xl">
-                <div>
-                    <h3 class="font-bold mb-2">🔍 Diagnóstico Completo</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Avaliação de dentes e estrias do pinhão</li>
-                        <li>Análise dos dentes da coroa</li>
-                        <li>Verificação de parafusos e apertos</li>
-                        <li>Análise da folga e alinhamento da corrente</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold mb-2">🔧 Montagem Especializada</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Posicionamento correto da trava</li>
-                        <li>Fixação adequada do pinhão e coroa</li>
-                        <li>Técnica de troca da corrente</li>
-                        <li>Regulagem final dos esticadores</li>
-                        <li>Testes de funcionamento</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 21: Orientações para Líderes -->
-        <div class="slide slide-green min-h-screen flex flex-col justify-center items-center p-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">👨‍🏫 ORIENTAÇÕES PARA OS LÍDERES</h2>
-            <div class="text-left grid grid-cols-2 gap-x-8 max-w-4xl">
-                <div>
-                    <h3 class="font-bold mb-2">📋 Antes do Treinamento</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Verificar disponibilidade de ferramentas e equipamentos</li>
-                        <li>Preparar motocicletas para prática</li>
-                        <li>Organizar materiais de consumo</li>
-                        <li>Confirmar acesso aos sistemas digitais</li>
-                        <li>Preparar ambiente adequado</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold mb-2">⚡ Durante o Treinamento</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Seguir rigorosamente o cronograma</li>
-                        <li>Garantir prática de todos os participantes</li>
-                        <li>Preencher checklist para avaliação individual</li>
-                        <li>Aplicar avaliação prática final</li>
-                    </ul>
-                </div>
-                <div class="mt-4 col-span-2">
-                    <h3 class="font-bold mb-2">✅ Após cada etapa</h3>
-                    <ul class="list-disc list-inside space-y-1">
-                        <li>Identificar necessidades de reforço</li>
-                        <li>Enviar relatório de conclusão</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 22: Critérios de Aprovação -->
-        <div class="slide slide-white min-h-screen flex flex-col justify-center items-center p-8 text-center">
-            <h2 class="text-3xl font-bold mb-4">📊 Critérios de Aprovação</h2>
-            <div class="text-left space-y-2 text-xl">
-                <p><strong>2</strong> - Presença em ambos os dias</p>
-                <p><strong>8</strong> - Nota mínima em todas as lições da gupy</p>
-                <p>✓ Demonstração prática de todos os procedimentos, e todos os itens do checklist</p>
-                <p>💯 Comprometimento com os pilares operacionais</p>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Navigation Controls -->
-    <div
-        class="fixed bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-4 bg-black/50 backdrop-blur-lg px-6 py-3 rounded-full">
-        <button id="prevBtn" class="bg-white/20 hover:bg-white/30 p-2 rounded-full transition-colors">
-            <i class='bx bx-chevron-left text-2xl'></i>
-        </button>
-
-        <div class="flex items-center gap-2">
-            <span id="currentSlide" class="text-sm font-bold">1</span>
-            <span class="text-sm">/</span>
-            <span id="totalSlides" class="text-sm">12</span>
-        </div>
-
-        <button id="nextBtn" class="bg-white/20 hover:bg-white/30 p-2 rounded-full transition-colors">
-            <i class='bx bx-chevron-right text-2xl'></i>
-        </button>
-    </div>
-
-    <!-- Slide Progress Bar -->
-    <div class="fixed top-0 left-0 w-full h-1 bg-black/30">
-        <div id="progressBar" class="h-full bg-primary transition-all duration-300" style="width: 8.33%"></div>
-    </div>
-
-    <!-- Slide Number Indicator -->
-    <div class="fixed top-6 right-6 bg-black/50 backdrop-blur-lg px-4 py-2 rounded-full">
-        <span id="slideIndicator" class="text-sm font-bold">1 / 12</span>
-    </div>
 
     <style>
+        /* Clean, modern design system */
+        :root {
+            --primary: #28a745;
+            --primary-dark: #1e7e34;
+            --primary-light: #34d058;
+            --surface: #ffffff;
+            --surface-alt: #f8fffe;
+            --text: #1e7e34;
+            --text-light: #6c757d;
+            --border: rgba(40, 167, 69, 0.1);
+            --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
+        }
+
+        /* Typography */
+        html,
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+            line-height: 1.6;
+        }
+
+        /* Slide system */
         .slide {
             display: none;
             position: absolute;
-            top: 0;
-            left: 0;
+            inset: 0;
             width: 100%;
             height: 100vh;
-            /* Força altura total da viewport */
+            padding: 2rem;
+            transition: all 320ms cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(8px);
+            overflow-y: auto;
+            -webkit-font-smoothing: antialiased;
         }
 
         .slide.active {
             display: flex;
+            opacity: 1;
+            transform: translateY(0);
+            align-items: center;
+            justify-content: center;
         }
 
+        .slide>.content,
+        .slide>div:first-child {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Slide variants */
         .slide-green {
-            background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
-            color: #fff;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
         }
 
         .slide-white {
-            background: #fff;
-            color: #28a745;
+            background: linear-gradient(135deg, var(--surface) 0%, var(--surface-alt) 100%);
+            color: var(--text);
+            position: relative;
         }
 
-        .slide-white .bg-white,
-        .slide-white .bg-white\/10,
-        .slide-white .bg-white\/20 {
-            background: #e8f5e8 !important;
-            color: #28a745 !important;
+        .slide-white::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 15%;
+            width: 4px;
+            height: 70%;
+            background: linear-gradient(180deg, var(--primary), var(--primary-dark));
+            border-radius: 2px;
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.15);
         }
 
-        .slide-green .bg-white,
-        .slide-green .bg-white\/10,
-        .slide-green .bg-white\/20 {
-            background: #fff !important;
-            color: #28a745 !important;
+        /* Typography scale */
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.025em;
+            margin-bottom: 1rem;
         }
 
-        .slide-white .text-green-700,
-        .slide-white .border-green-700 {
-            color: #28a745 !important;
-            border-color: #28a745 !important;
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2.25rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.015em;
+            margin-bottom: 0.75rem;
         }
 
-        .slide-green .text-white,
-        .slide-green .border-white {
-            color: #fff !important;
-            border-color: #fff !important;
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
         }
 
-        input[type="checkbox"] {
-            accent-color: #28a745;
+        /* Card system */
+        .card,
+        .panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
         }
 
-        /* Garantia adicional de centralização para PDF */
-        @media print {
+        .slide-green .card,
+        .slide-green .panel {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+        }
+
+        /* Button system */
+        .btn,
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: var(--radius);
+            transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            box-shadow: 0 4px 14px rgba(40, 167, 69, 0.2);
+        }
+
+        .btn:hover,
+        .download-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.25);
+        }
+
+        /* Icon system */
+        .icon-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: var(--radius);
+            color: white;
+            font-size: 1.25rem;
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
+        }
+
+        /* Progress system */
+        .progress-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            z-index: 60;
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            width: 0%;
+            transition: width 300ms ease;
+        }
+
+        /* Navigation */
+        .controls {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .controls button {
+            background: transparent;
+            border: none;
+            color: white;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 200ms;
+            cursor: pointer;
+        }
+
+        .controls button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+
+        /* Top bar */
+        .topbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 1rem 1.5rem;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        /* Table system */
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        table thead th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        table tbody td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            background: white;
+        }
+
+        table tbody tr:hover td {
+            background: rgba(40, 167, 69, 0.02);
+        }
+
+        /* List system */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            padding: 0.5rem 0;
+        }
+
+        li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+            margin-top: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        /* Grid layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        /* Badge system */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.375rem 0.875rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
             .slide {
-                display: flex !important;
-                min-height: 100vh;
-                justify-content: center;
-                align-items: center;
-                page-break-after: always;
+                padding: 1rem;
             }
+
+            .card,
+            .panel {
+                padding: 1.5rem;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar {
+                margin: 0.5rem;
+                padding: 0.75rem 1rem;
+            }
+        }
+
+        /* Print optimization */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            .slide {
+                display: block !important;
+                position: static !important;
+                height: auto !important;
+                page-break-after: always;
+                padding: 2rem;
+            }
+
+            .controls,
+            .topbar,
+            .progress-wrapper {
+                display: none !important;
+            }
+
+            .slide-green {
+                background: var(--primary) !important;
+                color: white !important;
+            }
+
+            .slide-white::before {
+                display: none;
+            }
+        }
+
+        /* Accessibility */
+        :focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Smooth interactions */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            transition: color 200ms ease, background-color 200ms ease;
         }
     </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans antialiased relative">
+
+    <!-- Top controls -->
+    <div class="topbar fixed inset-x-4 top-4 flex items-center justify-between z-50">
+        <button id="downloadBtn" class="btn">
+            <i class='bx bx-download text-xl'></i>
+            <span>Baixar PDF</span>
+        </button>
+
+        <div class="flex items-center gap-4">
+            <div class="text-sm font-medium" aria-live="polite">
+                Slides: <span id="slideIndicatorTop">1 / 22</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress-wrapper">
+        <div id="progressBar" class="progress-bar"></div>
+    </div>
+
+    <!-- Slide container -->
+    <main id="slideContainer" class="w-full h-screen relative overflow-hidden" role="region"
+        aria-roledescription="carousel" aria-label="Manual de Treinamento">
+
+        <!-- Slide 1: Título -->
+        <section class="slide slide-green active" role="group" aria-label="Slide 1 - Título">
+            <div class="content text-center">
+                <div class="icon-badge mb-8 mx-auto w-24 h-24 text-4xl">
+                    <i class='bx bx-book-reader'></i>
+                </div>
+                <h1 class="text-6xl font-extrabold mb-6">GUIA DE TREINAMENTO MOTTU</h1>
+                <h2 class="text-2xl font-semibold mb-4">Suporte de Campo - Nível 1/Onboarding</h2>
+                <h3 class="text-xl">MANUAL PARA LÍDERES</h3>
+            </div>
+        </section>
+
+        <!-- Slide 2: Introdução -->
+        <section class="slide slide-white" role="group" aria-label="Slide 2 - Introdução">
+            <div class="content text-center">
+                <div class="icon-badge mb-6 mx-auto">
+                    <i class='bx bx-target-lock'></i>
+                </div>
+                <h2 class="text-4xl font-bold mb-8">INTRODUÇÃO E OBJETIVOS</h2>
+                <div class="card max-w-4xl mx-auto text-left">
+                    <p class="text-lg leading-relaxed">
+                        Este manual foi desenvolvido para padronizar o treinamento de onboarding e
+                        nível 1 de suporte de campo da empresa Mottu em todas as filiais da companhia.
+                        Como líder, você é responsável por garantir que cada colaborador do time
+                        receba uma capacitação completa e consistente, seguindo rigorosamente os
+                        procedimentos aqui descritos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Objetivos do Programa -->
+        <section class="slide slide-green" role="group" aria-label="Slide 3 - Objetivos">
+            <div class="content">
+                <h2 class="text-4xl font-bold mb-8 text-center">OBJETIVOS DO PROGRAMA</h2>
+                <div class="grid-2 max-w-5xl mx-auto">
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-check-circle text-2xl'></i>
+                            Capacitação Técnica
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Capacitar prestadores para atuarem no suporte de campo</li>
+                            <li>Desenvolver competências técnicas específicas</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-star text-2xl'></i>
+                            Qualidade e Cultura
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Garantir atendimento padronizado e de qualidade</li>
+                            <li>Promover cultura organizacional e valores</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Informações Gerais -->
+        <section class="slide slide-white" role="group" aria-label="Slide 4 - Informações Gerais">
+            <div class="content">
+                <h2 class="text-4xl font-bold mb-8 text-center">INFORMAÇÕES GERAIS</h2>
+                <div class="grid-2 max-w-5xl mx-auto">
+                    <div class="card">
+                        <div class="icon-badge mb-4">
+                            <i class='bx bx-time'></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Duração</h3>
+                        <ul class="space-y-2">
+                            <li>2 dias (12 horas cada dia)</li>
+                            <li>Horários: Manhã 09:00 - 13:00</li>
+                            <li>Almoço: 13:00 - 14:00</li>
+                            <li>Tarde: 14:00 - 21:00</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="icon-badge mb-4">
+                            <i class='bx bx-group'></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Detalhes</h3>
+                        <ul class="space-y-2">
+                            <li>Modalidade: Presencial</li>
+                            <li>Público: Prestadores de suporte</li>
+                            <li>Certificação: Obrigatória</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Cronograma -->
+        <section class="slide slide-green" role="group" aria-label="Slide 5 - Cronograma">
+            <div class="content">
+                <h2 class="text-4xl font-bold mb-8 text-center">CRONOGRAMA GERAL</h2>
+                <div class="card max-w-6xl mx-auto overflow-x-auto">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>DIA</th>
+                                <th>PERÍODO</th>
+                                <th>HORÁRIO</th>
+                                <th>CARGA HORÁRIA</th>
+                                <th>MÓDULOS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dia 1</td>
+                                <td>Manhã</td>
+                                <td>09:00 - 13:00</td>
+                                <td>4 horas</td>
+                                <td>Módulos 1, 2 e 3</td>
+                            </tr>
+                            <tr>
+                                <td>Dia 1</td>
+                                <td>Tarde</td>
+                                <td>14:00 - 21:00</td>
+                                <td>8 horas</td>
+                                <td>Módulos 4, 5 e 6</td>
+                            </tr>
+                            <tr>
+                                <td>Dia 2</td>
+                                <td>Manhã</td>
+                                <td>09:00 - 13:00</td>
+                                <td>4 horas</td>
+                                <td>Módulos 7 e 8</td>
+                            </tr>
+                            <tr>
+                                <td>Dia 2</td>
+                                <td>Tarde</td>
+                                <td>14:00 - 21:00</td>
+                                <td>8 horas</td>
+                                <td>Módulos 9, 10 e 11</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Dia 1 Header -->
+        <section class="slide slide-white" role="group" aria-label="Slide 6 - Dia 1">
+            <div class="content text-center">
+                <div class="icon-badge mb-8 mx-auto w-24 h-24 text-4xl">
+                    <i class='bx bx-calendar'></i>
+                </div>
+                <h1 class="text-5xl font-bold mb-4">DIA 1</h1>
+                <h2 class="text-2xl">FUNDAMENTOS E PROCEDIMENTOS BÁSICOS</h2>
+            </div>
+        </section>
+
+        <!-- Slide 7: Módulo 1 -->
+        <section class="slide slide-green" role="group" aria-label="Slide 7 - Módulo 1">
+            <div class="content">
+                <div class="text-center mb-8">
+                    <div class="badge">MÓDULO 1</div>
+                    <h2 class="text-4xl font-bold">MISSÃO E PILARES DO SUPORTE DE CAMPO</h2>
+                </div>
+
+                <div class="card mb-8 max-w-4xl mx-auto">
+                    <div class="grid-3 text-center">
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-time'></i></div>
+                            <h3 class="font-semibold mb-1">Duração</h3>
+                            <p class="font-medium">30min</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-target-lock'></i></div>
+                            <h3 class="font-semibold mb-1">Objetivo</h3>
+                            <p class="font-medium">Alinhar propósito e valores</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-briefcase'></i></div>
+                            <h3 class="font-semibold mb-1">Tipo</h3>
+                            <p class="font-medium">Teórico + Discussão</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card max-w-5xl mx-auto">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                        <i class='bx bx-chat text-2xl'></i>
+                        Apresentação da Missão
+                    </h3>
+                    <p class="italic text-lg leading-relaxed border-l-4 border-white/30 pl-4">
+                        "Vocês serão responsáveis por realizar a manutenção emergencial nas motos dos
+                        nossos clientes, normalmente eles estarão em situações desagradáveis como: chuva,
+                        sol, frio, atrasado para uma entrega ou compromisso e por isso é muito importante
+                        que vocês sejam educados e compreensivos com eles. O propósito de vocês é maior
+                        do realizar manutenções nas motos, vocês fortalecem o corre de milhares de
+                        brasileiros que em muitos casos são marginalizados ou esquecidos pela sociedade."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Pilares Operacionais -->
+        <section class="slide slide-white" role="group" aria-label="Slide 8 - Pilares Operacionais">
+            <div class="content">
+                <h2 class="text-4xl font-bold mb-8 text-center">PILARES OPERACIONAIS (OBRIGATÓRIOS)</h2>
+                <div class="grid-3 max-w-6xl mx-auto">
+                    <div class="card">
+                        <div class="text-center mb-4">
+                            <div class="icon-badge mx-auto mb-2"><i class='bx bx-shield'></i></div>
+                            <span class="text-2xl font-bold">1-3</span>
+                        </div>
+                        <ul class="space-y-2">
+                            <li>Evitar o recolhimento da moto</li>
+                            <li>Trocar apenas o que for necessário</li>
+                            <li>Direcionar cliente para a base quando possível e seguro</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="text-center mb-4">
+                            <div class="icon-badge mx-auto mb-2"><i class='bx bx-clipboard'></i></div>
+                            <span class="text-2xl font-bold">4-6</span>
+                        </div>
+                        <ul class="space-y-2">
+                            <li>Informar todas as peças trocadas no serviço</li>
+                            <li>Preencher campo "Observação Motorista" com detalhes</li>
+                            <li>Responder ao time de analistas no chat</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="text-center mb-4">
+                            <div class="icon-badge mx-auto mb-2"><i class='bx bx-user-check'></i></div>
+                            <span class="text-2xl font-bold">7-9</span>
+                        </div>
+                        <ul class="space-y-2">
+                            <li>Executar serviços apenas com presença do cliente, exceto recolhimentos</li>
+                            <li>Não ultrapassar velocidade de 90 km/h</li>
+                            <li>Manter educação e respeito com os clientes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 9: Módulo 2 -->
+        <section class="slide slide-green" role="group" aria-label="Slide 9 - Módulo 2">
+            <div class="content">
+                <div class="text-center mb-8">
+                    <div class="badge">MÓDULO 2</div>
+                    <h2 class="text-4xl font-bold">CURSO ONLINE OBRIGATÓRIO</h2>
+                </div>
+
+                <div class="card mb-8 max-w-4xl mx-auto">
+                    <div class="grid-3 text-center">
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-time'></i></div>
+                            <h3 class="font-semibold mb-1">Duração</h3>
+                            <p class="font-medium">3h00min</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-target-lock'></i></div>
+                            <h3 class="font-semibold mb-1">Objetivo</h3>
+                            <p class="font-medium">Certificação digital</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-briefcase'></i></div>
+                            <h3 class="font-semibold mb-1">Tipo</h3>
+                            <p class="font-medium">Prático Online</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2 max-w-6xl mx-auto">
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-detail text-2xl'></i>
+                            Procedimento
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Utilizar PDF de apoio específico (enviado junto com este guia)</li>
+                            <li>Acompanhar execução passo a passo</li>
+                            <li>Validar nota mínima de 8 em todas as lições</li>
+                            <li>Validar conclusão do curso por cada participante</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-package text-2xl'></i>
+                            Recursos Necessários
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Celulares com internet e app baixado</li>
+                            <li>PDF de apoio ao curso online</li>
+                            <li>Controle de conclusão dos participantes</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="/assets/curso_online.pdf" class="btn" target="_blank" rel="noopener">
+                                <i class='bx bx-download'></i>
+                                Baixar Treinamento Online Gupy
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: Módulo 3 -->
+        <section class="slide slide-white" role="group" aria-label="Slide 10 - Módulo 3">
+            <div class="content">
+                <div class="text-center mb-8">
+                    <div class="badge">MÓDULO 3</div>
+                    <h2 class="text-4xl font-bold">COMUNICAÇÃO E USO DE APLICATIVOS</h2>
+                </div>
+
+                <div class="card mb-8 max-w-4xl mx-auto">
+                    <div class="grid-3 text-center">
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-time'></i></div>
+                            <h3 class="font-semibold mb-1">Duração</h3>
+                            <p class="font-medium">30min</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-target-lock'></i></div>
+                            <h3 class="font-semibold mb-1">Objetivo</h3>
+                            <p class="font-medium">Comunicação e ferramentas</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-briefcase'></i></div>
+                            <h3 class="font-semibold mb-1">Tipo</h3>
+                            <p class="font-medium">Teórico + Prático</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-3 max-w-6xl mx-auto">
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-chat text-2xl'></i>
+                            Comunicação com Clientes
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Técnicas de comunicação prestativa e educada</li>
+                            <li>Manutenção do respeito e profissionalismo</li>
+                            <li>Gestão de situações adversas</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-mobile text-2xl'></i>
+                            Aplicativo Mottu Serviços
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Login e logout no sistema</li>
+                            <li>Interface e navegação</li>
+                            <li>Funcionalidades de cada aba (Menu, Serviços, Extrato)</li>
+                            <li>Solicitação de insumos</li>
+                            <li>Comunicação com analistas via chat</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-dollar text-2xl'></i>
+                            Sistema de Bonificação
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Critérios de bonificação</li>
+                            <li>Penalizações e como evitá-las</li>
+                            <li>Utilização da aba "Avisos" para atualizações</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 11: Almoço -->
+        <section class="slide slide-green" role="group" aria-label="Slide 11 - Intervalo para Almoço">
+            <div class="content text-center">
+                <div class="icon-badge mb-8 mx-auto w-24 h-24 text-4xl">
+                    <i class='bx bx-restaurant'></i>
+                </div>
+                <h1 class="text-5xl font-bold mb-4">INTERVALO PARA ALMOÇO</h1>
+                <h2 class="text-3xl">1 HORA</h2>
+            </div>
+        </section>
+
+        <!-- Slide 12: Módulo 4 -->
+        <section class="slide slide-white" role="group" aria-label="Slide 12 - Módulo 4">
+            <div class="content">
+                <div class="text-center mb-8">
+                    <div class="badge">MÓDULO 4</div>
+                    <h2 class="text-4xl font-bold">ENTREGA DE EQUIPAMENTOS</h2>
+                </div>
+
+                <div class="card mb-8 max-w-4xl mx-auto">
+                    <div class="grid-3 text-center">
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-time'></i></div>
+                            <h3 class="font-semibold mb-1">Duração</h3>
+                            <p class="font-medium">30min</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-target-lock'></i></div>
+                            <h3 class="font-semibold mb-1">Objetivo</h3>
+                            <p class="font-medium">Fornecimento de EPIs</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-briefcase'></i></div>
+                            <h3 class="font-semibold mb-1">Tipo</h3>
+                            <p class="font-medium">Administrativo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card max-w-4xl mx-auto">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                        <i class='bx bx-package text-2xl'></i>
+                        Itens Obrigatórios
+                    </h3>
+                    <ul class="space-y-3">
+                        <li>Uniforme completo (calça, colete, bota, camiseta)</li>
+                        <li>Cartão flash</li>
+                        <li>Verificação de tamanhos e ajustes</li>
+                        <li>Orientações sobre uso e conservação</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 13: Módulo 5 -->
+        <section class="slide slide-green" role="group" aria-label="Slide 13 - Módulo 5">
+            <div class="content">
+                <div class="text-center mb-8">
+                    <div class="badge">MÓDULO 5</div>
+                    <h2 class="text-4xl font-bold">MONTAGEM DE CABOS</h2>
+                </div>
+
+                <div class="card mb-8 max-w-4xl mx-auto">
+                    <div class="grid-3 text-center">
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-time'></i></div>
+                            <h3 class="font-semibold mb-1">Duração</h3>
+                            <p class="font-medium">3h00min</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-target-lock'></i></div>
+                            <h3 class="font-semibold mb-1">Objetivo</h3>
+                            <p class="font-medium">Competências técnicas em transmissão</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-briefcase'></i></div>
+                            <h3 class="font-semibold mb-1">Tipo</h3>
+                            <p class="font-medium">Prático Hands-on</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-3 max-w-6xl mx-auto">
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-tachometer text-2xl'></i>
+                            Sistema de Aceleração
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Montagem do cabo do acelerador</li>
+                            <li>Ajuste de folga no manete do acelerador</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-stop-circle text-2xl'></i>
+                            Sistema de Frenagem
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Montagem do cabo do freio dianteiro</li>
+                            <li>Regulagem do freio dianteiro</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-cog text-2xl'></i>
+                            Sistema de Embreagem
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Montagem do cabo da embreagem com passagem correta</li>
+                            <li>Regulagem da embreagem</li>
+                            <li>Regulagem do cabo CBS</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 14: Módulo 6 -->
+        <section class="slide slide-white" role="group" aria-label="Slide 14 - Módulo 6">
+            <div class="content">
+                <div class="text-center mb-8">
+                    <div class="badge">MÓDULO 6</div>
+                    <h2 class="text-4xl font-bold">COMPONENTES DO SISTEMA ELÉTRICO</h2>
+                </div>
+
+                <div class="card mb-8 max-w-4xl mx-auto">
+                    <div class="grid-3 text-center">
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-time'></i></div>
+                            <h3 class="font-semibold mb-1">Duração</h3>
+                            <p class="font-medium">4h00min</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-target-lock'></i></div>
+                            <h3 class="font-semibold mb-1">Objetivo</h3>
+                            <p class="font-medium">Diagnóstico e reparo elétrico</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-briefcase'></i></div>
+                            <h3 class="font-semibold mb-1">Tipo</h3>
+                            <p class="font-medium">Prático Técnico</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2 max-w-6xl mx-auto">
+                    <div class="space-y-4">
+                        <div class="card">
+                            <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                                <i class='bx bx-battery text-2xl'></i>
+                                Sistema de Alimentação
+                            </h3>
+                            <ul class="space-y-2">
+                                <li>Troca de bateria</li>
+                                <li>Verificação do funcionamento do estator via farol dianteiro</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                                <i class='bx bx-bulb text-2xl'></i>
+                                Sistema de Iluminação
+                            </h3>
+                            <ul class="space-y-2">
+                                <li>Troca de lâmpada do farol dianteiro</li>
+                                <li>Localização e diagnóstico de fusíveis</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="card">
+                            <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                                <i class='bx bx-hot text-2xl'></i>
+                                Sistema de Ignição
+                            </h3>
+                            <ul class="space-y-2">
+                                <li>Teste de faísca</li>
+                                <li>Avaliação de bobina, cabo, cachimbo e vela</li>
+                                <li>Montagem do conjunto vela/cachimbo</li>
+                                <li>Análise da qualidade da mistura através da vela</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                                <i class='bx bx-search text-2xl'></i>
+                                Diagnóstico de Problemas
+                            </h3>
+                            <ul class="space-y-2">
+                                <li>Identificação de possíveis curtos-circuitos</li>
+                                <li>Locais críticos de verificação de fios</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 15: Dia 2 Header -->
+        <section class="slide slide-green" role="group" aria-label="Slide 15 - Dia 2">
+            <div class="content text-center">
+                <div class="icon-badge mb-8 mx-auto w-24 h-24 text-4xl">
+                    <i class='bx bx-calendar-check'></i>
+                </div>
+                <h1 class="text-5xl font-bold mb-4">DIA 2</h1>
+                <h2 class="text-2xl">CICLÍSTICA BÁSICA</h2>
+            </div>
+        </section>
+
+        <!-- Slide 16: Módulo 7 -->
+        <section class="slide slide-white" role="group" aria-label="Slide 16 - Módulo 7">
+            <div class="content">
+                <div class="text-center mb-8">
+                    <div class="badge">MÓDULO 7</div>
+                    <h2 class="text-4xl font-bold">SISTEMA RODA TRASEIRA</h2>
+                </div>
+
+                <div class="card mb-8 max-w-4xl mx-auto">
+                    <div class="grid-3 text-center">
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-time'></i></div>
+                            <h3 class="font-semibold mb-1">Duração</h3>
+                            <p class="font-medium">2h00min</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-target-lock'></i></div>
+                            <h3 class="font-semibold mb-1">Objetivo</h3>
+                            <p class="font-medium">Avaliação e montagem roda traseira</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-briefcase'></i></div>
+                            <h3 class="font-semibold mb-1">Tipo</h3>
+                            <p class="font-medium">Prático Avançado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2 max-w-6xl mx-auto">
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-search text-2xl'></i>
+                            Avaliação Técnica
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Localização do TWI e verificação do desgaste do pneu</li>
+                            <li>Avaliação de desalinhamento da roda</li>
+                            <li>Verificação de danos (roda amassada)</li>
+                            <li>Avaliação dos prisioneiros da coroa</li>
+                            <li>Verificação da porca do prisioneiro</li>
+                            <li>Diagnóstico de folga no rolamento</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-wrench text-2xl'></i>
+                            Procedimentos de Montagem
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Instalação dos coxins da coroa</li>
+                            <li>Passagem correta do eixo (esquerda para direita)</li>
+                            <li>Montagem adequada dos esticadores</li>
+                            <li>Posicionamento correto dos espaçadores</li>
+                            <li>Ajuste idêntico da corrente em ambos os lados</li>
+                            <li>Sequência de aperto (porca da flange → eixo)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 17: Módulo 8 -->
+        <section class="slide slide-green" role="group" aria-label="Slide 17 - Módulo 8">
+            <div class="content">
+                <div class="text-center mb-8">
+                    <div class="badge">MÓDULO 8</div>
+                    <h2 class="text-4xl font-bold">SISTEMA RODA DIANTEIRA</h2>
+                </div>
+
+                <div class="card mb-8 max-w-4xl mx-auto">
+                    <div class="grid-3 text-center">
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-time'></i></div>
+                            <h3 class="font-semibold mb-1">Duração</h3>
+                            <p class="font-medium">2h00min</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-target-lock'></i></div>
+                            <h3 class="font-semibold mb-1">Objetivo</h3>
+                            <p class="font-medium">Competências na roda dianteira</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-briefcase'></i></div>
+                            <h3 class="font-semibold mb-1">Tipo</h3>
+                            <p class="font-medium">Prático Técnico</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2 max-w-6xl mx-auto">
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-search text-2xl'></i>
+                            Avaliação Técnica
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Localização do TWI e verificação do desgaste</li>
+                            <li>Avaliação de desalinhamento</li>
+                            <li>Verificação de danos estruturais</li>
+                            <li>Diagnóstico de folga no rolamento</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-wrench text-2xl'></i>
+                            Procedimentos de Montagem
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Posicionamento do espaçador na roda</li>
+                            <li>Instalação correta da engrenagem do velocímetro</li>
+                            <li>Passagem e aperto adequado do eixo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 18: Almoço 2 -->
+        <section class="slide slide-white" role="group" aria-label="Slide 18 - Intervalo para Almoço">
+            <div class="content text-center">
+                <div class="icon-badge mb-8 mx-auto w-24 h-24 text-4xl">
+                    <i class='bx bx-restaurant'></i>
+                </div>
+                <h1 class="text-5xl font-bold mb-4">INTERVALO PARA ALMOÇO</h1>
+                <h2 class="text-3xl">1 HORA</h2>
+            </div>
+        </section>
+
+        <!-- Slide 19: Módulo 9 -->
+        <section class="slide slide-green" role="group" aria-label="Slide 19 - Módulo 9">
+            <div class="content">
+                <div class="text-center mb-8">
+                    <div class="badge">MÓDULO 9</div>
+                    <h2 class="text-4xl font-bold">SISTEMA FREIO TRASEIRO</h2>
+                </div>
+
+                <div class="card mb-8 max-w-4xl mx-auto">
+                    <div class="grid-3 text-center">
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-time'></i></div>
+                            <h3 class="font-semibold mb-1">Duração</h3>
+                            <p class="font-medium">2h00min</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-target-lock'></i></div>
+                            <h3 class="font-semibold mb-1">Objetivo</h3>
+                            <p class="font-medium">Manutenção do freio traseiro</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-briefcase'></i></div>
+                            <h3 class="font-semibold mb-1">Tipo</h3>
+                            <p class="font-medium">Prático Especializado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2 max-w-6xl mx-auto">
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-search text-2xl'></i>
+                            Diagnóstico
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Avaliação do desgaste da lona de freio</li>
+                            <li>Verificação do ajuste do freio</li>
+                            <li>Análise de componentes (pedal, varão, estrias do eixo came)</li>
+                            <li>Teste da mola de retorno</li>
+                            <li>Verificação de compatibilidade das lonas</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-wrench text-2xl'></i>
+                            Montagem e Ajustes
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Montagem sem deformação das molas</li>
+                            <li>Posicionamento correto da alavanca de freio</li>
+                            <li>Verificação da cupilha</li>
+                            <li>Montagem adequada do eixo came (O'ring e arruela)</li>
+                            <li>Regulagem final e teste de funcionamento</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 20: Módulo 10 -->
+        <section class="slide slide-white" role="group" aria-label="Slide 20 - Módulo 10">
+            <div class="content">
+                <div class="text-center mb-8">
+                    <div class="badge">MÓDULO 10</div>
+                    <h2 class="text-4xl font-bold">SISTEMA FREIO DIANTEIRO</h2>
+                </div>
+
+                <div class="card mb-8 max-w-4xl mx-auto">
+                    <div class="grid-3 text-center">
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-time'></i></div>
+                            <h3 class="font-semibold mb-1">Duração</h3>
+                            <p class="font-medium">2h00min</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-target-lock'></i></div>
+                            <h3 class="font-semibold mb-1">Objetivo</h3>
+                            <p class="font-medium">Manutenção do freio dianteiro</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-briefcase'></i></div>
+                            <h3 class="font-semibold mb-1">Tipo</h3>
+                            <p class="font-medium">Prático Avançado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2 max-w-6xl mx-auto">
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-search text-2xl'></i>
+                            Diagnóstico Avançado
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Identificação de travamento ou problema "borrachudo"</li>
+                            <li>Avaliação do desgaste via visor do espelho</li>
+                            <li>Teste de retorno do manete</li>
+                            <li>Análise do cabo de aço, estrias e molas</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-wrench text-2xl'></i>
+                            Montagem Técnica
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Posicionamento correto dos cabos CBS e freio dianteiro</li>
+                            <li>Instalação da engrenagem do velocímetro</li>
+                            <li>Verificação do velocímetro antes do aperto</li>
+                            <li>Teste final de funcionamento</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 21: Módulo 11 -->
+        <section class="slide slide-green" role="group" aria-label="Slide 21 - Módulo 11">
+            <div class="content">
+                <div class="text-center mb-8">
+                    <div class="badge">MÓDULO 11</div>
+                    <h2 class="text-4xl font-bold">KIT RELAÇÃO</h2>
+                </div>
+
+                <div class="card mb-8 max-w-4xl mx-auto">
+                    <div class="grid-3 text-center">
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-time'></i></div>
+                            <h3 class="font-semibold mb-1">Duração</h3>
+                            <p class="font-medium">3h00min</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-target-lock'></i></div>
+                            <h3 class="font-semibold mb-1">Objetivo</h3>
+                            <p class="font-medium">Manutenção do sistema de transmissão</p>
+                        </div>
+                        <div>
+                            <div class="icon-badge mb-3 mx-auto"><i class='bx bx-briefcase'></i></div>
+                            <h3 class="font-semibold mb-1">Tipo</h3>
+                            <p class="font-medium">Prático Especializado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2 max-w-6xl mx-auto">
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-search text-2xl'></i>
+                            Diagnóstico Completo
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Avaliação de dentes e estrias do pinhão</li>
+                            <li>Análise dos dentes da coroa</li>
+                            <li>Verificação de parafusos e apertos</li>
+                            <li>Análise da folga e alinhamento da corrente</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                            <i class='bx bx-wrench text-2xl'></i>
+                            Montagem Especializada
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>Posicionamento correto da trava</li>
+                            <li>Fixação adequada do pinhão e coroa</li>
+                            <li>Técnica de troca da corrente</li>
+                            <li>Regulagem final dos esticadores</li>
+                            <li>Testes de funcionamento</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 22: Orientações para Líderes -->
+        <section class="slide slide-white" role="group" aria-label="Slide 22 - Orientações para Líderes">
+            <div class="content">
+                <h2 class="text-4xl font-bold mb-8 text-center">ORIENTAÇÕES PARA OS LÍDERES</h2>
+                <div class="grid-3 max-w-6xl mx-auto">
+                    <div class="card">
+                        <div class="icon-badge mb-4 mx-auto">
+                            <i class='bx bx-clipboard'></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-center">Antes do Treinamento</h3>
+                        <ul class="space-y-2">
+                            <li>Verificar disponibilidade de ferramentas e equipamentos</li>
+                            <li>Preparar motocicletas para prática</li>
+                            <li>Organizar materiais de consumo</li>
+                            <li>Confirmar acesso aos sistemas digitais</li>
+                            <li>Preparar ambiente adequado</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="icon-badge mb-4 mx-auto">
+                            <i class='bx bx-bolt'></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-center">Durante o Treinamento</h3>
+                        <ul class="space-y-2">
+                            <li>Seguir rigorosamente o cronograma</li>
+                            <li>Garantir prática de todos os participantes</li>
+                            <li>Preencher checklist para avaliação individual</li>
+                            <li>Aplicar avaliação prática final</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="icon-badge mb-4 mx-auto">
+                            <i class='bx bx-check'></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-center">Após cada etapa</h3>
+                        <ul class="space-y-2">
+                            <li>Identificar necessidades de reforço</li>
+                            <li>Enviar relatório de conclusão</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 23: Critérios de Aprovação -->
+        <section class="slide slide-green" role="group" aria-label="Slide 23 - Critérios de Aprovação">
+            <div class="content text-center">
+                <h2 class="text-4xl font-bold mb-8">CRITÉRIOS DE APROVAÇÃO</h2>
+                <div class="grid-2 max-w-5xl mx-auto">
+                    <div class="card">
+                        <div class="icon-badge mb-4 mx-auto">
+                            <i class='bx bx-calendar-check'></i>
+                        </div>
+                        <h3 class="text-6xl font-bold mb-2">2</h3>
+                        <p class="text-xl">Presença em ambos os dias</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon-badge mb-4 mx-auto">
+                            <i class='bx bx-award'></i>
+                        </div>
+                        <h3 class="text-6xl font-bold mb-2">8</h3>
+                        <p class="text-xl">Nota mínima em todas as lições da Gupy</p>
+                    </div>
+                </div>
+                <div class="grid-2 max-w-5xl mx-auto mt-6">
+                    <div class="card">
+                        <div class="icon-badge mb-4 mx-auto">
+                            <i class='bx bx-check-circle'></i>
+                        </div>
+                        <p class="text-xl">Demonstração prática de todos os procedimentos e todos os itens do checklist
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="icon-badge mb-4 mx-auto">
+                            <i class='bx bx-star'></i>
+                        </div>
+                        <p class="text-xl">Comprometimento com os pilares operacionais</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Controls (bottom) -->
+    <div class="controls fixed bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-4 z-50">
+        <button id="prevBtn" aria-label="Anterior">
+            <i class='bx bx-chevron-left text-2xl'></i>
+        </button>
+
+        <div class="flex items-center gap-2 text-white font-medium">
+            <span id="currentSlide">1</span>
+            <span>/</span>
+            <span id="totalSlides">22</span>
+        </div>
+
+        <button id="nextBtn" aria-label="Próximo">
+            <i class='bx bx-chevron-right text-2xl'></i>
+        </button>
+    </div>
 
     <script>
-        let currentSlideIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
+        // Dados centralizados para todo o conteúdo
+        const slidesData = [
+            {
+                id: 1,
+                title: "GUIA DE TREINAMENTO MOTTU",
+                subtitle: "MANUAL PARA LÍDERES",
+                type: "title",
+                color: "green",
+                content: `<div class="mb-8 max-w-4xl">
+                    <i class='bx bx-book-reader text-8xl mb-6'></i>
+                    <h1 class="text-5xl font-extrabold mb-4">GUIA DE TREINAMENTO MOTTU</h1>
+                    <h2 class="text-2xl font-semibold mb-6">MANUAL PARA LÍDERES</h2>
+                </div>`
+            },
+            {
+                id: 2,
+                title: "Objetivo",
+                type: "text",
+                color: "white",
+                content: `<div class="max-w-4xl mx-auto">
+                    <p class="text-xl leading-relaxed">
+                        Este manual foi desenvolvido para padronizar o treinamento de onboarding e nível 1 de suporte de
+                        campo da empresa Mottu em todas as filiais da companhia. Como líder, você é responsável por garantir
+                        que cada colaborador do time receba uma capacitação completa e consistente, seguindo rigorosamente
+                        os procedimentos aqui descritos.
+                    </p>
+                </div>`
+            },
+            {
+                id: 3,
+                title: "Objetivos do Programa & Informações Gerais",
+                type: "info",
+                color: "green",
+                content: `<h2 class="text-4xl font-bold mb-6">Objetivos do Programa & Informações Gerais</h2>
+                <div class="text-left space-y-2 max-w-2xl">
+                    <p><span class="font-bold"> Duração por dia:</span> 12 horas</p>
+                    <p><span class="font-bold">Horários:</span> Manhã 09:00 - 13:00 | Almoço 13:00 - 14:00 | Tarde 14:00 -
+                        21:00</p>
+                    <p><span class="font-bold">Nível:</span> Suporte de Campo - Nível 1/Onboarding</p>
+                </div>`
+            },
+            {
+                id: 4,
+                title: "INTRODUÇÃO E OBJETIVOS",
+                type: "list",
+                color: "white",
+                content: `<h2 class="text-4xl font-bold mb-4"> INTRODUÇÃO E OBJETIVOS</h2>
+                <ul class="list-inside text-left space-y-2 max-w-3xl">
+                    <li>Capacitar prestadores para atuarem no suporte de campo</li>
+                    <li>Garantir atendimento padronizado e de qualidade</li>
+                    <li>Desenvolver competências técnicas específicas</li>
+                    <li>Promover cultura organizacional e valores</li>
+                    <li>Duração: 2 dias (12 horas cada dia)</li>
+                    <li>Modalidade: Presencial</li>
+                    <li>Público: Prestadores de suporte</li>
+                    <li>Certificação: Obrigatória</li>
+                </ul>`
+            },
+            {
+                id: 5,
+                title: "CRONOGRAMA GERAL",
+                type: "table",
+                color: "green",
+                content: `<h2 class="text-4xl font-bold mb-4">CRONOGRAMA GERAL</h2>
+                <div class="w-full overflow-auto max-w-5xl">
+                    <table class="table-auto bg-white/20 rounded-lg w-full text-left">
+                        <thead class="bg-white/30">
+                            <tr>
+                                <th class="px-4 py-2">DIA</th>
+                                <th class="px-4 py-2">PERÍODO</th>
+                                <th class="px-4 py-2">HORÁRIO</th>
+                                <th class="px-4 py-2">CARGA HORÁRIA</th>
+                                <th class="px-4 py-2">MÓDULOS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border-t border-white/30 px-4 py-2">Dia 1</td>
+                                <td class="border-t border-white/30 px-4 py-2">Manhã</td>
+                                <td class="border-t border-white/30 px-4 py-2">09:00 - 13:00</td>
+                                <td class="border-t border-white/30 px-4 py-2">4 horas</td>
+                                <td class="border-t border-white/30 px-4 py-2">Módulos 1, 2 e 3</td>
+                            </tr>
+                            <tr>
+                                <td class="border-t border-white/30 px-4 py-2">Dia 1</td>
+                                <td class="border-t border-white/30 px-4 py-2">Tarde</td>
+                                <td class="border-t border-white/30 px-4 py-2">14:00 - 21:00</td>
+                                <td class="border-t border-white/30 px-4 py-2">8 horas</td>
+                                <td class="border-t border-white/30 px-4 py-2">Módulos 4, 5 e 6</td>
+                            </tr>
+                            <tr>
+                                <td class="border-t border-white/30 px-4 py-2">Dia 2</td>
+                                <td class="border-t border-white/30 px-4 py-2">Manhã</td>
+                                <td class="border-t border-white/30 px-4 py-2">09:00 - 13:00</td>
+                                <td class="border-t border-white/30 px-4 py-2">4 horas</td>
+                                <td class="border-t border-white/30 px-4 py-2">Módulos 7 e 8</td>
+                            </tr>
+                            <tr>
+                                <td class="border-t border-white/30 px-4 py-2">Dia 2</td>
+                                <td class="border-t border-white/30 px-4 py-2">Tarde</td>
+                                <td class="border-t border-white/30 px-4 py-2">14:00 - 21:00</td>
+                                <td class="border-t border-white/30 px-4 py-2">8 horas</td>
+                                <td class="border-t border-white/30 px-4 py-2">Módulos 9, 10 e 11</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>`
+            },
+            {
+                id: 6,
+                title: "MÓDULO 1: MISSÃO E PILARES DO SUPORTE DE CAMPO",
+                type: "module",
+                color: "white",
+                duration: "30min",
+                objective: "Alinhar propósito e valores",
+                moduleType: "Teórico + Discussão",
+                content: `<div class="mb-4 max-w-2xl">
+                    <p><strong> Duração:</strong> 30min</p>
+                    <p><strong> Objetivo:</strong> Alinhar propósito e valores</p>
+                    <p><strong> Tipo:</strong> Teórico + Discussão</p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg max-w-2xl text-left text-mottu-primary">
+                    <h3 class="font-bold mb-2"> Apresentação da Missão</h3>
+                    <p class="italic text-sm">"Vocês serão responsáveis por realizar a manutenção emergencial nas motos dos
+                        nossos clientes, normalmente eles estarão em situações desagradáveis como: chuva, sol, frio, atrasado para
+                        uma entrega ou compromisso e por isso é muito importante que vocês sejam educados e compreensivos
+                        com eles. O propósito de vocês é maior do realizar manutenções nas motos, vocês fortalecem o corre
+                        de milhares de brasileiros que em muitos casos são marginalizados ou esquecidos pela sociedade."</p>
+                </div>`
+            },
+            {
+                id: 7,
+                title: "Pilares Operacionais (OBRIGATÓRIOS)",
+                type: "list",
+                color: "green",
+                content: `<h2 class="text-4xl font-bold mb-4"> Pilares Operacionais (OBRIGATÓRIOS)</h2>
+                <ol class="list-decimal list-inside text-left space-y-1 grid grid-cols-2 gap-x-8 max-w-4xl">
+                    <li>Evitar o recolhimento da moto</li>
+                    <li>Trocar apenas o que for necessário</li>
+                    <li>Direcionar cliente para a base quando possível e seguro</li>
+                    <li>Informar todas as peças trocadas no serviço</li>
+                    <li>Preencher campo 'Observação Motorista' com detalhes</li>
+                    <li>Responder ao time de analistas no chat</li>
+                    <li>Executar serviços apenas com presença do cliente, exceto recolhimentos</li>
+                    <li>Não ultrapassar velocidade de 90 km/h</li>
+                    <li>Manter educação e respeito com os clientes</li>
+                </ol>`
+            },
+            {
+                id: 8,
+                title: "MÓDULO 2: CURSO ONLINE OBRIGATÓRIO",
+                type: "module",
+                color: "white",
+                duration: "3h00min",
+                objective: "Certificação digital",
+                moduleType: "Prático Online",
+                content: `<div class="mb-4 max-w-2xl">
+                    <p><strong> Duração:</strong> 3h00min</p>
+                    <p><strong> Objetivo:</strong> Certificação digital</p>
+                    <p><strong> Tipo:</strong> Prático Online</p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg max-w-2xl text-left text-mottu-primary">
+                    <h3 class="font-bold mb-2 text-center"> Procedimento</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Acompanhar execução passo a passo</li>
+                        <li>Validar nota mínima de 8 em todas as lições</li>
+                        <li>Validar conclusão do curso por cada participante</li>
+                    </ul>
+                    <h3 class="font-bold mb-2 mt-4 text-center"> Recursos Necessários</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Utilizar PDF de apoio específico (enviado junto com este guia)</li>
+                    </ul>
+                </div>`
+            },
+            {
+                id: 9,
+                title: "MÓDULO 3: COMUNICAÇÃO E USO DE APLICATIVOS",
+                type: "module",
+                color: "green",
+                duration: "30min",
+                objective: "Comunicação e ferramentas",
+                moduleType: "Teórico + Prático",
+                content: `<div class="mb-4 max-w-2xl">
+                    <p><strong> Duração:</strong> 30min</p>
+                    <p><strong> Objetivo:</strong> Comunicação e ferramentas</p>
+                    <p><strong> Tipo:</strong> Teórico + Prático</p>
+                </div>
+                <div class="text-left grid grid-cols-2 gap-x-8 max-w-4xl">
+                    <div>
+                        <h3 class="font-bold mb-2"> Comunicação com Clientes</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Técnicas de comunicação prestativa e educada</li>
+                            <li>Manutenção do respeito e profissionalismo</li>
+                            <li>Gestão de situações adversas</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-2"> Aplicativo Mottu Serviços</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Login e logout no sistema</li>
+                            <li>Interface e navegação</li>
+                            <li>Funcionalidades de cada aba</li>
+                            <li>Solicitação de insumos</li>
+                            <li>Comunicação com analistas via chat</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="font-bold mb-2"> Sistema de Bonificação</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Critérios de bonificação</li>
+                            <li>Penalizações e como evitá-las</li>
+                            <li>Utilização da aba 'Avisos' para atualizações</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="font-bold mb-2"> Recursos Necessários</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Celulares com internet e app baixado</li>
+                        </ul>
+                    </div>
+                </div>`
+            },
+            {
+                id: 10,
+                title: "INTERVALO PARA ALMOÇO",
+                type: "break",
+                color: "white",
+                content: `<i class='bx bx-restaurant text-8xl mb-6'></i>
+                <h2 class="text-5xl font-bold mb-4">INTERVALO PARA ALMOÇO</h2>
+                <h3 class="text-3xl">1 HORA</h3>`
+            },
+            {
+                id: 11,
+                title: "MÓDULO 4: ENTREGA DE EQUIPAMENTOS",
+                type: "module",
+                color: "green",
+                duration: "30min",
+                objective: "Fornecimento de EPIs",
+                moduleType: "Administrativo",
+                content: `<div class="mb-4 max-w-2xl">
+                    <p><strong> Duração:</strong> 30min</p>
+                    <p><strong> Objetivo:</strong> Fornecimento de EPIs</p>
+                    <p><strong> Tipo:</strong> Administrativo</p>
+                </div>
+                <div class="bg-white/20 p-4 rounded-lg text-left">
+                    <h3 class="font-bold mb-2 text-center"> Itens Obrigatórios</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Uniforme completo (calça, colete, bota, camiseta)</li>
+                        <li>Cartão flash</li>
+                        <li>Verificação de tamanhos e ajustes</li>
+                        <li>Orientações sobre uso e conservação</li>
+                    </ul>
+                </div>`
+            },
+            {
+                id: 12,
+                title: "MÓDULO 5: MONTAGEM DE CABOS",
+                type: "module",
+                color: "white",
+                duration: "3h00min",
+                objective: "Competências técnicas em transmissão",
+                moduleType: "Prático Hands-on",
+                content: `<div class="mb-4 max-w-2xl">
+                    <p><strong> Duração:</strong> 3h00min</p>
+                    <p><strong> Objetivo:</strong> Competências técnicas em transmissão</p>
+                    <p><strong> Tipo:</strong> Prático Hands-on</p>
+                </div>
+                <div class="text-left grid grid-cols-3 gap-x-8 max-w-4xl">
+                    <div>
+                        <h3 class="font-bold mb-2">Sistema de Aceleração</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Montagem do cabo do acelerador</li>
+                            <li>Ajuste de folga no manete do acelerador</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-2"> Sistema de Frenagem</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Montagem do cabo do freio dianteiro</li>
+                            <li>Regulagem do freio dianteiro</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-2"> Sistema de Embreagem</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Montagem do cabo da embreagem com passagem correta</li>
+                            <li>Regulagem da embreagem</li>
+                            <li>Regulagem do cabo CBS</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-4 text-left">
+                    <h3 class="font-bold mb-2"> Recursos Necessários</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Motocicletas para prática</li>
+                        <li>Ferramentas específicas</li>
+                        <li>Cabos novos e usados para comparação</li>
+                        <li>Checklist of procedures</li>
+                    </ul>
+                </div>`
+            },
+            {
+                id: 13,
+                title: "MÓDULO 6: COMPONENTES DO SISTEMA ELÉTRICO",
+                type: "module",
+                color: "green",
+                duration: "4h00min",
+                objective: "Diagnóstico e reparo elétrico",
+                moduleType: "Prático Técnico",
+                content: `<div class="mb-4 max-w-2xl">
+                    <p><strong> Duração:</strong> 4h00min</p>
+                    <p><strong> Objetivo:</strong> Diagnóstico e reparo elétrico</p>
+                    <p><strong> Tipo:</strong> Prático Técnico</p>
+                </div>
+                <div class="text-left grid grid-cols-2 gap-x-8 max-w-5xl">
+                    <div>
+                        <h3 class="font-bold mb-2"> Sistema de Alimentação</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Troca de bateria</li>
+                            <li>Verificação do funcionamento do estator via farol dianteiro</li>
+                        </ul>
+                        <h3 class="font-bold mb-2 mt-4"> Sistema de Iluminação</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Troca de lâmpada do farol dianteiro</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-2"> Sistema de Ignição</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Localização e diagnóstico de fusíveis</li>
+                            <li>Teste de faísca</li>
+                            <li>Avaliação de bobina, cabo, cachimbo e vela</li>
+                            <li>Montagem do conjunto vela/cachimbo</li>
+                            <li>Análise da qualidade da mistura através da vela</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 col-span-2">
+                        <h3 class="font-bold mb-2"> Diagnóstico de Problemas</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Identificação de possíveis curtos-circuitos</li>
+                            <li>Locais críticos de verificação de fios</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 col-span-2">
+                        <h3 class="font-bold mb-2"> Recursos Necessários</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Ferramentas elétricas básicas</li>
+                            <li>Multímetro</li>
+                            <li>Componentes elétricos variados</li>
+                            <li>Motocicletas para prática</li>
+                        </ul>
+                    </div>
+                </div>`
+            },
+            {
+                id: 14,
+                title: "DIA 2",
+                type: "title",
+                color: "white",
+                content: `<i class='bx bx-calendar-check text-8xl mb-6'></i>
+                <h2 class="text-5xl font-bold mb-4">DIA 2</h2>
+                <h3 class="text-2xl">CICLISTICA BÁSICA</h3>`
+            },
+            {
+                id: 15,
+                title: "MÓDULO 7: SISTEMA RODA TRASEIRA",
+                type: "module",
+                color: "green",
+                duration: "2h00min",
+                objective: "Avaliação e montagem roda traseira",
+                moduleType: "Prático Avançado",
+                content: `<div class="mb-8 flex items-center justify-center">
+                    <span class="bg-mottu-primary text-white font-bold py-1 px-4 rounded-full text-sm mr-3">MÓDULO 7</span>
+                    <h2 class="text-3xl font-bold text-mottu-secondary"><i class="fas fa-cog text-mottu-primary mr-2"></i>
+                        SISTEMA RODA TRASEIRA</h2>
+                </div>
 
-        document.getElementById('totalSlides').textContent = totalSlides;
+                <div class="mb-8 max-w-2xl bg-mottu-light rounded-xl p-6 shadow-sm">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="bg-mottu-primary rounded-full p-3 mb-2">
+                                <i class="fas fa-clock text-white"></i>
+                            </div>
+                            <p class="font-semibold text-mottu-secondary">Duração</p>
+                            <p class="text-mottu-primary font-medium">2h00min</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="bg-mottu-primary rounded-full p-3 mb-2">
+                                <i class="fas fa-bullseye text-white"></i>
+                            </div>
+                            <p class="font-semibold text-mottu-secondary">Objetivo</p>
+                            <p class="text-mottu-primary font-medium">Avaliação e montagem roda traseira</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="bg-mottu-primary rounded-full p-3 mb-2">
+                                <i class="fas fa-tasks text-white"></i>
+                            </div>
+                            <p class="font-semibold text-mottu-secondary">Tipo</p>
+                            <p class="text-mottu-primary font-medium">Prático Avançado</p>
+                        </div>
+                    </div>
+                </div>
 
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            slides[index].classList.add('active');
+                <div class="text-left grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-mottu-primary">
+                        <h3 class="font-bold text-lg mb-4 text-mottu-secondary flex items-center">
+                            <span class="bg-mottu-primary rounded-full p-2 mr-3">
+                                <i class="fas fa-search text-white"></i>
+                            </span>
+                            Avaliação Técnica
+                        </h3>
+                        <ul class="list-none space-y-3">
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Localização do TWI e verificação do desgaste do pneu</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Avaliação de desalinhamento da roda</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Verificação de danos (roda amassada)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Avaliação dos prisioneiros da coroa</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Verificação da porca do prisioneiro</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Diagnóstico de folga no rolamento</span>
+                            </li>
+                        </ul>
+                    </div>
 
-            // Update controls
-            document.getElementById('currentSlide').textContent = index + 1;
-            document.getElementById('slideIndicator').textContent = `${index + 1} / ${totalSlides}`;
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-mottu-primary">
+                        <h3 class="font-bold text-lg mb-4 text-mottu-secondary flex items-center">
+                            <span class="bg-mottu-primary rounded-full p-2 mr-3">
+                                <i class="fas fa-tools text-white"></i>
+                            </span>
+                            Procedimentos de Montagem
+                        </h3>
+                        <ul class="list-none space-y-3">
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Instalação dos coxins da coroa</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Passagem correta do eixo (esquerda para direita)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Montagem adequada dos esticadores</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Posicionamento correto dos espaçadores</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Ajuste idêntico da corrente em ambos os lados</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Sequência de aperto (porca da flange → eixo)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>`
+            },
+            {
+                id: 16,
+                title: "MÓDULO 8: SISTEMA RODA DIANTEIRA",
+                type: "module",
+                color: "white",
+                duration: "2h00min",
+                objective: "Competências na roda dianteira",
+                moduleType: "Prático Técnico",
+                content: `<div class="mb-8 flex items-center justify-center">
+                    <span class="bg-mottu-primary text-white font-bold py-1 px-4 rounded-full text-sm mr-3">MÓDULO 8</span>
+                    <h2 class="text-3xl font-bold text-mottu-secondary"><i class="fas fa-cog text-mottu-primary mr-2"></i>
+                        SISTEMA RODA DIANTEIRA</h2>
+                </div>
 
-            // Update progress bar
-            const progress = ((index + 1) / totalSlides) * 100;
-            document.getElementById('progressBar').style.width = progress + '%';
+                <div class="mb-8 max-w-2xl bg-mottu-light rounded-xl p-6 shadow-sm">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="bg-mottu-primary rounded-full p-3 mb-2">
+                                <i class="fas fa-clock text-white"></i>
+                            </div>
+                            <p class="font-semibold text-mottu-secondary">Duração</p>
+                            <p class="text-mottu-primary font-medium">2h00min</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="bg-mottu-primary rounded-full p-3 mb-2">
+                                <i class="fas fa-bullseye text-white"></i>
+                            </div>
+                            <p class="font-semibold text-mottu-secondary">Objetivo</p>
+                            <p class="text-mottu-primary font-medium">Competências na roda dianteira</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="bg-mottu-primary rounded-full p-3 mb-2">
+                                <i class="fas fa-tasks text-white"></i>
+                            </div>
+                            <p class="font-semibold text-mottu-secondary">Tipo</p>
+                            <p class="text-mottu-primary font-medium">Prático Técnico</p>
+                        </div>
+                    </div>
+                </div>
 
-            // Update button states
-            document.getElementById('prevBtn').style.opacity = index === 0 ? '0.5' : '1';
-            document.getElementById('nextBtn').style.opacity = index === totalSlides - 1 ? '0.5' : '1';
+                <div class="text-left grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-mottu-primary">
+                        <h3 class="font-bold text-lg mb-4 text-mottu-secondary flex items-center">
+                            <span class="bg-mottu-primary rounded-full p-2 mr-3">
+                                <i class="fas fa-search text-white"></i>
+                            </span>
+                            Avaliação Técnica
+                        </h3>
+                        <ul class="list-none space-y-3">
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Localização do TWI e verificação do desgaste</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Avaliação de desalinhamento</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Verificação de danos estrutura                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Diagnóstico de folga no rolamento</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-mottu-primary">
+                        <h3 class="font-bold text-lg mb-4 text-mottu-secondary flex items-center">
+                            <span class="bg-mottu-primary rounded-full p-2 mr-3">
+                                <i class="fas fa-tools text-white"></i>
+                            </span>
+                            Procedimentos de Montagem
+                        </h3>
+                        <ul class="list-none space-y-3">
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Posicionamento do espaçador na roda</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Instalação correta da engrenagem do velocímetro</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Passagem e aperto adequado do eixo</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>`
+            },
+            {
+                id: 17,
+                title: "INTERVALO PARA ALMOÇO",
+                type: "break",
+                color: "green",
+                content: `<i class='bx bx-restaurant text-8xl mb-6'></i>
+                <h2 class="text-5xl font-bold mb-4">INTERVALO PARA ALMOÇO</h2>
+                <h3 class="text-3xl">1 HORA</h3>`
+            },
+            {
+                id: 18,
+                title: "MÓDULO 9: SISTEMA FREIO TRASEIRO",
+                type: "module",
+                color: "white",
+                duration: "2h00min",
+                objective: "Manutenção do freio traseiro",
+                moduleType: "Prático Especializado",
+                content: `<div class="mb-8 flex items-center justify-center">
+                    <span class="bg-mottu-primary text-white font-bold py-1 px-4 rounded-full text-sm mr-3">MÓDULO 9</span>
+                    <h2 class="text-3xl font-bold text-mottu-secondary"><i class="fas fa-ban text-mottu-primary mr-2"></i>
+                        SISTEMA FREIO TRASEIRO</h2>
+                </div>
+
+                <div class="mb-8 max-w-2xl bg-mottu-light rounded-xl p-6 shadow-sm">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="bg-mottu-primary rounded-full p-3 mb-2">
+                                <i class="fas fa-clock text-white"></i>
+                            </div>
+                            <p class="font-semibold text-mottu-secondary">Duração</p>
+                            <p class="text-mottu-primary font-medium">2h00min</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="bg-mottu-primary rounded-full p-3 mb-2">
+                                <i class="fas fa-bullseye text-white"></i>
+                            </div>
+                            <p class="font-semibold text-mottu-secondary">Objetivo</p>
+                            <p class="text-mottu-primary font-medium">Manutenção do freio traseiro</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="bg-mottu-primary rounded-full p-3 mb-2">
+                                <i class="fas fa-tasks text-white"></i>
+                            </div>
+                            <p class="font-semibold text-mottu-secondary">Tipo</p>
+                            <p class="text-mottu-primary font-medium">Prático Especializado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-left grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-mottu-primary">
+                        <h3 class="font-bold text-lg mb-4 text-mottu-secondary flex items-center">
+                            <span class="bg-mottu-primary rounded-full p-2 mr-3">
+                                <i class="fas fa-search text-white"></i>
+                            </span>
+                            Diagnóstico
+                        </h3>
+                        <ul class="list-none space-y-3">
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Avaliação do desgaste da lona de freio</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Verificação do ajuste do freio</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Análise de componentes (pedal, varão, estrias do eixo came)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Teste da mola de retorno</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Verificação de compatibilidade das lonas</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-mottu-primary">
+                        <h3 class="font-bold text-lg mb-4 text-mottu-secondary flex items-center">
+                            <span class="bg-mottu-primary rounded-full p-2 mr-3">
+                                <i class="fas fa-tools text-white"></i>
+                            </span>
+                            Montagem e Ajustes
+                        </h3>
+                        <ul class="list-none space-y-3">
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Montagem sem deformação das molas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Posicionamento correto da alavanca de freio</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Verificação della cupilha</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Montagem adequada do eixo came (O'ring e arruela)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-mottu-light text-mottu-primary rounded-full p-1 mr-3 mt-1">
+                                    <i class="fas fa-check-circle text-xs"></i>
+                                </span>
+                                <span>Regulagem final e teste de funcionamento</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>`
+            },
+            {
+                id: 19,
+                title: "MÓDULO 10: SISTEMA FREIO DIANTEIRO",
+                type: "module",
+                color: "green",
+                duration: "2h00min",
+                objective: "Manutenção do freio dianteiro",
+                moduleType: "Prático Avançado",
+                content: `<div class="mb-4 max-w-2xl">
+                    <p><strong> Duração:</strong> 2h00min</p>
+                    <p><strong> Objetivo:</strong> Manutenção do freio dianteiro</p>
+                    <p><strong> Tipo:</strong> Prático Avançado</p>
+                </div>
+                <div class="text-left grid grid-cols-2 gap-x-8 max-w-4xl">
+                    <div>
+                        <h3 class="font-bold mb-2"> Diagnóstico Avançado</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Identificação de travamento ou problema "borrachudo"</li>
+                            <li>Avaliação do desgaste via visor do espelho</li>
+                            <li>Teste de retorno do manete</li>
+                            <li>Análise do cabo de aço, estrias e molas</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-2"> Montagem Técnica</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Posicionamento correto dos cabos CBS e freio dianteiro</li>
+                            <li>Instalação da engrenagem do velocímetro</li>
+                            <li>Verificação do velocímetro antes do aperto</li>
+                            <li>Teste final de funcionamento</li>
+                        </ul>
+                    </div>
+                </div>`
+            },
+            {
+                id: 20,
+                title: "MÓDULO 11: KIT RELAÇÃO",
+                type: "module",
+                color: "white",
+                duration: "3h00min",
+                objective: "Manutenção do sistema de transmissão",
+                moduleType: "Prático Especializado",
+                content: `<div class="mb-4 max-w-2xl">
+                    <p><strong> Duração:</strong> 3h00min</p>
+                    <p><strong> Objetivo:</strong> Manutenção do sistema de transmissão</p>
+                    <p><strong> Tipo:</strong> Prático Especializado</p>
+                </div>
+                <div class="text-left grid grid-cols-2 gap-x-8 max-w-4xl">
+                    <div>
+                        <h3 class="font-bold mb-2"> Diagnóstico Completo</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Avaliação de dentes и estrias do pinhão</li>
+                            <li>Análise dos dentes da coroa</li>
+                            <li>Verificação de parafusos e apertos</li>
+                            <li>Análise da folga e alinhamento da corrente</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-2"> Montagem Especializada</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Posicionamento correto della cupilha</li>
+                            <li>Fixação adequada do pinhão e coroa</li>
+                            <li>Técnica de troca da corrente</li>
+                            <li>Regulagem final dos esticadores</li>
+                            <li>Testes de funcionamento</li>
+                        </ul>
+                    </div>
+                </div>`
+            },
+            {
+                id: 21,
+                title: "ORIENTAÇÕES PARA OS LÍDERES",
+                type: "list",
+                color: "green",
+                content: `<h2 class="text-3xl font-bold mb-4"> ORIENTAÇÕES PARA OS LÍDERES</h2>
+                <div class="text-left grid grid-cols-2 gap-x-8 max-w-4xl">
+                    <div>
+                        <h3 class="font-bold mb-2"> Antes do Treinamento</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Verificar disponibilidade de ferramentas e equipamentos</li>
+                            <li>Preparar motocicletas para prática</li>
+                            <li>Organizar materiais de consumo</li>
+                            <li>Confirmar acesso aos sistemas digitais</li>
+                            <li>Preparar ambiente adequado</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-2"> Durante o Treinamento</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Seguir rigorosamente o cronograma</li>
+                            <li>Garantir prática de todos os participantes</li>
+                            <li>Preencher checklist para avaliação individual</li>
+                            <li>Aplicar avaliação prática final</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 col-span-2">
+                        <h3 class="font-bold mb-2"> Após cada etapa</h3>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Identificar necessidades de reforço</li>
+                            <li>Enviar relatório de conclusão</li>
+                        </ul>
+                    </div>
+                </div>`
+            },
+            {
+                id: 22,
+                title: "Critérios de Aprovação",
+                type: "list",
+                color: "white",
+                content: `<h2 class="text-3xl font-bold mb-4">Critérios de Aprovação</h2>
+                <div class="text-left space-y-2 text-xl max-w-2xl">
+                    <p><strong>2</strong> - Presença em ambos os dias</p>
+                    <p><strong>8</strong> - Nota mínima em todas as lições da gupy</p>
+                    <p>✓ Demonstração prática de todos os procedimentos, e todos os itens do checklist</p>
+                    <p>💯 Comprometimento com os pilares operacionais</p>
+                </div>`
+            }
+        ];
+
+        // Função para renderizar todos os slides
+        function renderAllSlides() {
+            const slideContainer = document.getElementById('slideContainer');
+
+            slidesData.forEach(slide => {
+                const slideElement = document.createElement('section');
+                slideElement.className = `slide slide-${slide.color} min-h-screen flex flex-col justify-center items-center p-8 text-center`;
+                slideElement.setAttribute('role', 'group');
+                slideElement.setAttribute('aria-label', `Slide ${slide.id} - ${slide.title}`);
+
+                // Adicionar conteúdo específico baseado no tipo de slide
+                slideElement.innerHTML = slide.content;
+
+                slideContainer.appendChild(slideElement);
+            });
+
+            // Inicializar o primeiro slide como ativo
+            document.querySelector('.slide').classList.add('active');
         }
 
-        document.getElementById('nextBtn').addEventListener('click', () => {
-            if (currentSlideIndex < totalSlides - 1) {
-                currentSlideIndex++;
-                showSlide(currentSlideIndex);
+        // Função para inicializar a navegação dos slides
+        function initSlideNavigation() {
+            const slides = Array.from(document.querySelectorAll('.slide'));
+            let currentSlideIndex = 0;
+            const totalSlides = slides.length;
+            const progressBar = document.getElementById('progressBar');
+            const currentSlideEl = document.getElementById('currentSlide');
+            const totalSlidesEl = document.getElementById('totalSlides');
+            const slideIndicatorTop = document.getElementById('slideIndicatorTop');
+
+            totalSlidesEl.textContent = totalSlides;
+            slideIndicatorTop.textContent = `${currentSlideIndex + 1} / ${totalSlides}`;
+
+            function updateUI(index) {
+                slides.forEach((s, i) => {
+                    s.classList.toggle('active', i === index);
+                });
+                currentSlideEl.textContent = index + 1;
+                slideIndicatorTop.textContent = `${index + 1} / ${totalSlides}`;
+                const percent = Math.round(((index + 1) / totalSlides) * 100);
+                progressBar.style.width = percent + '%';
+
+                // Keyboard focus to active slide for screen readers
+                const active = slides[index];
+                if (active) active.setAttribute('tabindex', '-1');
+                slides.forEach((s, i) => {
+                    if (i !== index) s.removeAttribute('tabindex');
+                });
             }
-        });
 
-        document.getElementById('prevBtn').addEventListener('click', () => {
-            if (currentSlideIndex > 0) {
-                currentSlideIndex--;
-                showSlide(currentSlideIndex);
-            }
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' && currentSlideIndex < totalSlides - 1) {
-                currentSlideIndex++;
-                showSlide(currentSlideIndex);
-            } else if (e.key === 'ArrowLeft' && currentSlideIndex > 0) {
-                currentSlideIndex--;
-                showSlide(currentSlideIndex);
-            }
-        });
-
-        // Touch/swipe support
-        let startX = 0;
-        let endX = 0;
-
-        document.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-        });
-
-        document.addEventListener('touchend', (e) => {
-            endX = e.changedTouches[0].clientX;
-            handleSwipe();
-        });
-
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = startX - endX;
-
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0 && currentSlideIndex < totalSlides - 1) {
-                    // Swipe left - next slide
+            function showNext() {
+                if (currentSlideIndex < totalSlides - 1) {
                     currentSlideIndex++;
-                    showSlide(currentSlideIndex);
-                } else if (diff < 0 && currentSlideIndex > 0) {
-                    // Swipe right - previous slide
-                    currentSlideIndex--;
-                    showSlide(currentSlideIndex);
+                    updateUI(currentSlideIndex);
                 }
             }
+
+            function showPrev() {
+                if (currentSlideIndex > 0) {
+                    currentSlideIndex--;
+                    updateUI(currentSlideIndex);
+                }
+            }
+
+            // Attach control handlers
+            document.getElementById('nextBtn').addEventListener('click', showNext);
+            document.getElementById('prevBtn').addEventListener('click', showPrev);
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') showNext();
+                else if (e.key === 'ArrowLeft') showPrev();
+            });
+
+            // Swipe support (simple)
+            let touchStartX = 0;
+            document.addEventListener('touchstart', (e) => touchStartX = e.touches[0].clientX);
+            document.addEventListener('touchend', (e) => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                const threshold = 60;
+                if (diff > threshold) showNext();
+                else if (diff < -threshold) showPrev();
+            });
+
+            // Initialize UI
+            updateUI(currentSlideIndex);
+
+            // Download PDF handler using html2pdf.js
+            document.getElementById('downloadBtn').addEventListener('click', async () => {
+                // For best results: temporarily make all slides display:block so html2pdf captures each as its own page
+                slides.forEach(s => s.style.display = 'block');
+
+                const element = document.getElementById('slideContainer');
+                const opt = {
+                    margin: [0.2, 0.2, 0.2, 0.2],
+                    filename: 'manual_treinamento.pdf',
+                    html2canvas: { scale: 2, useCORS: true },
+                    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                };
+
+                try {
+                    await html2pdf().set(opt).from(element).save();
+                } catch (err) {
+                    console.error('Erro gerando PDF:', err);
+                    alert('Erro ao gerar PDF. Veja console para detalhes.');
+                } finally {
+                    // restore display rules (let carousel logic handle which is active)
+                    slides.forEach((s, i) => {
+                        s.style.display = i === currentSlideIndex ? 'flex' : '';
+                    });
+                    updateUI(currentSlideIndex);
+                }
+            });
+
+            // Improve accessibility: announce slide change to screen readers
+            const live = document.createElement('div');
+            live.setAttribute('aria-live', 'polite');
+            live.className = 'sr-only';
+            document.body.appendChild(live);
+
+            // When slide changes, update live region
+            const observer = new MutationObserver(() => {
+                live.textContent = `Slide ${currentSlideIndex + 1} de ${totalSlides}`;
+            });
+            observer.observe(document.getElementById('slideContainer'), { attributes: true, childList: true, subtree: true });
         }
 
-        // Initialize
-        showSlide(0);
-
-        document.getElementById("downloadBtn").addEventListener("click", () => {
-            window.location.href = "/download-pdf";
+        // Inicializar a aplicação quando o DOM estiver pronto
+        document.addEventListener('DOMContentLoaded', () => {
+            renderAllSlides();
+            initSlideNavigation();
         });
-        document.getElementById("downloadCurso").addEventListener("click", () => {
-            const link = document.createElement('a');
-            link.href = '/assets/curso_online.pdf';
-            link.download = 'curso_online.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
-
     </script>
+
 </body>
 
 </html>
