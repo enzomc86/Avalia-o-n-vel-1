@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual de Treinamento - Suporte de Campo</title>
+    <title>Manual de Treinamento - Slides</title>
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./server.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -16,394 +17,517 @@
                             DEFAULT: '#28a745',
                             dark: '#1e7e34',
                             light: '#e8f5e8',
-                        },
-                        secondary: '#f8f9fa',
-                    },
-                    fontFamily: {
-                        sans: ['system-ui', '-apple-system', 'sans-serif'],
+                        }
                     }
                 }
             }
         }
     </script>
-
 </head>
 
-<body class="font-sans text-gray-800 leading-relaxed max-w-[210mm] mx-auto p-5 bg-white">
+<body class="bg-gray-900 text-white font-sans overflow-hidden">
+    <button id="downloadBtn"
+        class="download-btn fixed top-4 left-4 bg-slate-200 border-2 text-green-700 hover:text-slate-200 border-green-700 hover:bg-green-700 hover:border-slate-200 transition-all duration-300 ease-in-out  px-4 py-2 rounded-lg shadow-lg flex items-center gap-2 z-50">
+        <i class='bx bx-download'></i> Baixar PDF
+    </button>
+    <!-- Slide Container -->
+    <div id="slideContainer" class="w-full h-screen relative">
 
-    <!-- Floating Action Buttons -->
-    <div class="floating-buttons no-print">
-        <button id="downloadPdf" class="btn-action">
-            <i class='bx bx-download'></i>
-            <span>Baixar PDF</span>
-        </button>
-        <button onclick="window.print()" class="btn-action">
-            <i class='bx bx-printer'></i>
-            <span>Imprimir</span>
-        </button>
-    </div>
-
-    <!-- Loading Message -->
-    <div id="printMessage"
-        class="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-primary text-white px-6 py-3 rounded-full shadow-lg hidden z-50 flex items-center gap-2">
-        <i class='bx bx-loader-alt bx-spin'></i>
-        <span>Preparando PDF... Isso pode levar alguns segundos.</span>
-    </div>
-
-    <!-- Header -->
-    <div class="header text-center border-b-4 border-primary pb-6 mb-10">
-        <div class="icon-container justify-center mb-4">
-            <i class='bx bx-book-reader text-primary text-4xl'></i>
+        <!-- Slide 1: Título -->
+        <div class="slide slide-green active min-h-screen flex flex-col justify-center items-center text-center p-8">
+            <div class="mb-8">
+                <i class='bx bx-book-reader text-8xl mb-6'></i>
+                <h1 class="text-6xl font-bold mb-4">MANUAL DE TREINAMENTO</h1>
+                <h2 class="text-2xl mb-6">Suporte de Campo - Nível 1/Onboarding</h2>
+                <div class="bg-white/20 px-6 py-3 rounded-full">
+                    <p class="text-xl">Guia para Líderes de Filial</p>
+                </div>
+            </div>
         </div>
-        <h1 class="text-primary text-3xl font-bold mb-3">MANUAL DE TREINAMENTO</h1>
-        <h2 class="text-gray-600 text-xl font-normal mb-2">Suporte de Campo - Nível 1/Onboarding</h2>
-        <div class="inline-flex items-center gap-2 bg-primary-light px-4 py-2 rounded-full">
-            <i class='bx bx-user-check text-primary'></i>
-            <p class="font-bold text-primary-dark">Guia para Líderes de Filial</p>
+
+        <!-- Slide 2: Objetivo -->
+        <div class="slide slide-white min-h-screen flex flex-col justify-center items-center text-center p-12">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center justify-center mb-8">
+                    <i class='bx bx-clipboard text-5xl mr-4'></i>
+                    <h2 class="text-4xl font-bold">Objetivo do Manual</h2>
+                </div>
+                <p class="text-xl leading-relaxed">
+                    Este manual foi desenvolvido para padronizar o treinamento de onboarding e nível 1 de suporte de
+                    campo da empresa Mottu em todas as filiais da companhia. Como líder você é responsável por garantir
+                    que cada colaborador do time receba uma capacitação completa e consistente, seguindo rigorosamente
+                    os procedimentos aqui descritos.
+                </p>
+            </div>
         </div>
+
+        <!-- Slide 3: Dia 1 Header -->
+        <div class="slide slide-green min-h-screen flex flex-col justify-center items-center text-center p-8">
+            <i class='bx bx-calendar-alt text-8xl mb-6'></i>
+            <h2 class="text-5xl font-bold mb-4">DIA 1</h2>
+            <h3 class="text-2xl">FUNDAMENTOS E SISTEMAS BÁSICOS</h3>
+        </div>
+
+        <!-- Slide 4: Missão do Suporte -->
+        <div class="slide slide-white min-h-screen flex flex-col justify-center items-center text-center p-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex items-center justify-center mb-8">
+                    <i class='bx bx-target-lock text-5xl mr-4'></i>
+                    <h2 class="text-4xl font-bold">Apresentação da Missão</h2>
+                </div>
+
+                <div class="bg-white/10 rounded-xl p-6 mb-8">
+                    <h3 class="text-2xl font-bold mb-4 text-yellow-300">Discurso Obrigatório:</h3>
+                    <p class="text-lg italic leading-relaxed">
+                        "Vocês serão responsáveis por realizar a manutenção emergencial nas motos dos nossos clientes,
+                        normalmente eles estarão em situações desagradáveis como: chuva, sol, frio, atrasado para uma
+                        entrega ou compromisso e por isso é muito importante que vocês sejam educados e compreensivos
+                        com eles. O propósito de vocês é maior do que realizar manutenções nas motos, vocês fortalecem o
+                        corre de milhares de brasileiros que em muitos casos são marginalizados ou esquecidos pela
+                        sociedade."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Pilares Fundamentais -->
+        <div class="slide slide-green min-h-screen flex flex-col justify-center items-center text-center p-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex items-center justify-center mb-8">
+                    <i class='bx bx-buildings text-5xl mr-4'></i>
+                    <h2 class="text-4xl font-bold">PILARES FUNDAMENTAIS</h2>
+                    <span class="ml-4 bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">MEMORIZAÇÃO
+                        OBRIGATÓRIA</span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/10 p-4 rounded-lg flex items-center">
+                        <i class='bx bx-shield-check text-2xl mr-3'></i>
+                        <span>Evitar o recolhimento da moto</span>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg flex items-center">
+                        <i class='bx bx-wrench text-2xl mr-3'></i>
+                        <span>Trocar apenas o necessário</span>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg flex items-center">
+                        <i class='bx bx-map text-2xl mr-3'></i>
+                        <span>Direcionar cliente para base</span>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg flex items-center">
+                        <i class='bx bx-list-check text-2xl mr-3'></i>
+                        <span>Informar peças trocadas</span>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg flex items-center">
+                        <i class='bx bx-chat text-2xl mr-3'></i>
+                        <span>Responder no chat</span>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg flex items-center">
+                        <i class='bx bx-user-check text-2xl mr-3'></i>
+                        <span>Executar com presença do cliente</span>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg flex items-center">
+                        <i class='bx bx-tachometer text-2xl mr-3'></i>
+                        <span>Não ultrapassar 90 km/h</span>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg flex items-center">
+                        <i class='bx bx-heart text-2xl mr-3'></i>
+                        <span>Ser educado e respeitoso</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Curso Online -->
+        <div class="slide slide-white min-h-screen flex flex-col justify-center items-center text-center p-12">
+            <div class="max-w-4xl mx-auto text-center">
+                <i class='bx bx-laptop text-8xl mb-6'></i>
+                <h2 class="text-4xl font-bold mb-8">Execução do Curso Online</h2>
+
+                <div class="bg-yellow-500/20 border-2 border-yellow-400 rounded-xl p-6 mb-8">
+                    <div class="flex items-center justify-center mb-4">
+                        <i class='bx bx-error text-3xl mr-3 text-yellow-400'></i>
+                        <h3 class="text-2xl font-bold text-yellow-400">IMPORTANTE</h3>
+                    </div>
+                    <p class="text-lg">
+                        Cada colaborador deve completar o curso online seguindo as instruções do documento PDF
+                        específico de treinamento no celular.
+                    </p>
+                </div>
+
+                <button
+                    class="bg-white text-orange-800 px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors">
+                    <i class='bx bx-download mr-3'></i>
+                    Baixar Treinamento Online Gupy
+                </button>
+            </div>
+        </div>
+
+        <!-- Slide 7: Comunicação -->
+        <div class="slide slide-green min-h-screen flex flex-col justify-center items-center text-center p-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex items-center justify-center mb-8">
+                    <i class='bx bx-mobile text-5xl mr-4'></i>
+                    <h2 class="text-4xl font-bold">Comunicação com Cliente e Uso do App</h2>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/10 p-4 rounded-lg">
+                        <i class='bx bx-chat text-2xl mb-2'></i>
+                        <p>Comunicação prestativa e educada</p>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg">
+                        <i class='bx bx-mobile-alt text-2xl mb-2'></i>
+                        <p>Aplicativos da tela inicial</p>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg">
+                        <i class='bx bx-log-in text-2xl mb-2'></i>
+                        <p>Login e logout no Mottu Serviços</p>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg">
+                        <i class='bx bx-layout text-2xl mb-2'></i>
+                        <p>Interface e todas as abas</p>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg">
+                        <i class='bx bx-package text-2xl mb-2'></i>
+                        <p>Solicitação de insumos</p>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg">
+                        <i class='bx bx-message-dots text-2xl mb-2'></i>
+                        <p>Comunicação com analistas</p>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg">
+                        <i class='bx bx-dollar text-2xl mb-2'></i>
+                        <p>Sistema de bonificação</p>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-lg">
+                        <i class='bx bx-bell text-2xl mb-2'></i>
+                        <p>Utilização da aba "Avisos"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Almoço -->
+        <div class="slide slide-white min-h-screen flex flex-col justify-center items-center text-center p-8">
+            <i class='bx bx-restaurant text-8xl mb-6'></i>
+            <h2 class="text-5xl font-bold mb-4">INTERVALO</h2>
+            <h3 class="text-3xl">PARA ALMOÇO</h3>
+        </div>
+
+        <!-- Slide 9: EPIs -->
+        <div class="slide slide-green min-h-screen flex flex-col justify-center items-center text-center p-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center justify-center mb-8">
+                    <i class='bx bx-shield text-5xl mr-4'></i>
+                    <h2 class="text-4xl font-bold">Entrega de EPIs e Cartão Flash</h2>
+                </div>
+
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-white/10 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-indigo-300">Checklist de Entrega:</h3>
+                        <div class="space-y-3">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 w-5 h-5">
+                                <span>Uniforme completo</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 w-5 h-5">
+                                <span>Cartão flash</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 w-5 h-5">
+                                <span>Verificar tamanhos</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="mr-3 w-5 h-5">
+                                <span>Orientar sobre uso</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class='bx bx-hard-hat text-8xl text-indigo-300'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Dia 2 Header -->
+        <div class="slide slide-white min-h-screen flex flex-col justify-center items-center text-center p-8">
+            <i class='bx bx-calendar-check text-8xl mb-6'></i>
+            <h2 class="text-5xl font-bold mb-4">DIA 2</h2>
+            <h3 class="text-2xl">COMPONENTES MECÂNICOS AVANÇADOS</h3>
+        </div>
+
+        <!-- Slide 11: Componentes Técnicos Overview -->
+        <div class="slide slide-green min-h-screen flex flex-col justify-center items-center text-center p-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex items-center justify-center mb-8">
+                    <i class='bx bx-cog text-5xl mr-4'></i>
+                    <h2 class="text-4xl font-bold">Componentes Técnicos - Dia 2</h2>
+                </div>
+
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="bg-white/10 p-6 rounded-lg text-center">
+                        <i class='bx bx-shape-circle text-4xl mb-4'></i>
+                        <h3 class="text-xl font-bold mb-2">Rodas</h3>
+                        <p>Dianteira e Traseira</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg text-center">
+                        <i class='bx bx-stop-circle text-4xl mb-4'></i>
+                        <h3 class="text-xl font-bold mb-2">Freios</h3>
+                        <p>Sistema completo</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg text-center">
+                        <i class='bx bx-link text-4xl mb-4'></i>
+                        <h3 class="text-xl font-bold mb-2">Kit Relação</h3>
+                        <p>Corrente e engrenagens</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-yellow-500/20 border-l-4 border-yellow-400 p-6 rounded">
+                    <p class="text-lg">
+                        <strong>Cada componente inclui:</strong> Avaliação detalhada + Procedimentos de montagem
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Checklist Final -->
+        <div class="slide slide-white min-h-screen flex flex-col justify-center items-center text-center p-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center justify-center mb-8">
+                    <i class='bx bx-check-circle text-5xl mr-4'></i>
+                    <h2 class="text-4xl font-bold">Checklist Final de Treinamento</h2>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <label class="flex items-center bg-white/10 p-4 rounded-lg cursor-pointer">
+                        <input type="checkbox" class="mr-3 w-5 h-5">
+                        <span>Missão compreendida</span>
+                    </label>
+                    <label class="flex items-center bg-white/10 p-4 rounded-lg cursor-pointer">
+                        <input type="checkbox" class="mr-3 w-5 h-5">
+                        <span>Pilares memorizados</span>
+                    </label>
+                    <label class="flex items-center bg-white/10 p-4 rounded-lg cursor-pointer">
+                        <input type="checkbox" class="mr-3 w-5 h-5">
+                        <span>Curso online concluído</span>
+                    </label>
+                    <label class="flex items-center bg-white/10 p-4 rounded-lg cursor-pointer">
+                        <input type="checkbox" class="mr-3 w-5 h-5">
+                        <span>App dominado</span>
+                    </label>
+                    <label class="flex items-center bg-white/10 p-4 rounded-lg cursor-pointer">
+                        <input type="checkbox" class="mr-3 w-5 h-5">
+                        <span>EPIs entregues</span>
+                    </label>
+                    <label class="flex items-center bg-white/10 p-4 rounded-lg cursor-pointer">
+                        <input type="checkbox" class="mr-3 w-5 h-5">
+                        <span>Sistemas elétricos OK</span>
+                    </label>
+                    <label class="flex items-center bg-white/10 p-4 rounded-lg cursor-pointer">
+                        <input type="checkbox" class="mr-3 w-5 h-5">
+                        <span>Rodas dominadas</span>
+                    </label>
+                    <label class="flex items-center bg-white/10 p-4 rounded-lg cursor-pointer">
+                        <input type="checkbox" class="mr-3 w-5 h-5">
+                        <span>Freios executados</span>
+                    </label>
+                </div>
+
+                <div class="mt-8 bg-red-500/20 border-2 border-red-400 rounded-xl p-6">
+                    <p class="text-lg font-bold text-center">
+                        <i class='bx bx-error mr-2'></i>
+                        RESPONSABILIDADE DO LÍDER: Certificar completa compreensão antes de avançar
+                    </p>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <!-- Objetivo Section -->
+    <!-- Navigation Controls -->
     <div
-        class="section mb-10 p-6 rounded-xl bg-gradient-to-r from-secondary to-primary-light border-l-4 border-primary shadow-sm">
-        <div class="icon-container text-primary text-xl font-bold mb-4">
-            <i class='bx bx-clipboard'></i>
-            <h3>Objetivo do Manual</h3>
+        class="fixed bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-4 bg-black/50 backdrop-blur-lg px-6 py-3 rounded-full">
+        <button id="prevBtn" class="bg-white/20 hover:bg-white/30 p-2 rounded-full transition-colors">
+            <i class='bx bx-chevron-left text-2xl'></i>
+        </button>
+
+        <div class="flex items-center gap-2">
+            <span id="currentSlide" class="text-sm font-bold">1</span>
+            <span class="text-sm">/</span>
+            <span id="totalSlides" class="text-sm">12</span>
         </div>
-        <p class="text-gray-700 leading-relaxed">Este manual foi desenvolvido para padronizar o treinamento de
-            onboarding e nível 1 de suporte de campo da
-            empresa Mottu em todas as filiais da companhia. Como líder você é responsável por garantir que cada
-            colaborador do time receba uma capacitação completa e consistente, seguindo rigorosamente os procedimentos
-            aqui descritos.</p>
+
+        <button id="nextBtn" class="bg-white/20 hover:bg-white/30 p-2 rounded-full transition-colors">
+            <i class='bx bx-chevron-right text-2xl'></i>
+        </button>
     </div>
 
-    <!-- Day 1 Header -->
-    <div
-        class="day-header bg-gradient-to-r from-primary via-primary-dark to-primary text-white p-6 my-10 rounded-xl shadow-lg">
-        <div class="flex items-center justify-center gap-3">
-            <i class='bx bx-calendar-alt text-2xl'></i>
-            <h2 class="text-2xl font-bold">DIA 1 - FUNDAMENTOS E SISTEMAS BÁSICOS</h2>
-        </div>
+    <!-- Slide Progress Bar -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-black/30">
+        <div id="progressBar" class="h-full bg-primary transition-all duration-300" style="width: 8.33%"></div>
     </div>
 
-    <!-- Mission Section -->
-    <div class="section mb-10 p-6 rounded-xl bg-secondary border-l-4 border-primary shadow-sm">
-        <div class="icon-container text-primary text-xl font-bold mb-6">
-            <i class='bx bx-target-lock'></i>
-            <h3>1. Apresentação da Missão do Suporte de Campo</h3>
-        </div>
-
-        <div
-            class="mission-box bg-gradient-to-r from-primary-light to-white border-2 border-primary rounded-xl p-6 my-6 shadow-md">
-            <div class="flex items-center gap-2 mb-4">
-                <i class='bx bx-message-square-detail text-primary text-xl'></i>
-                <strong class="text-primary-dark text-lg">Discurso Obrigatório para Novos Colaboradores:</strong>
-            </div>
-            <div class="italic text-gray-800 leading-relaxed pl-4 border-l-2 border-primary">
-                "Vocês serão responsáveis por realizar a manutenção emergencial nas motos dos nossos clientes,
-                normalmente
-                eles estarão em situações desagradáveis como: chuva, sol, frio, atrasado para uma entrega ou compromisso
-                e
-                por isso é muito importante que vocês sejam educados e compreensivos com eles. O propósito de vocês é
-                maior
-                do que realizar manutenções nas motos, vocês fortalecem o corre de milhares de brasileiros que em muitos
-                casos
-                são marginalizados ou esquecidos pela sociedade. Através do nosso suporte, os clientes continuam
-                garantindo
-                o sustento deles e de suas famílias. Lembrem-se disso quando estiverem realizando um atendimento."
-            </div>
-        </div>
-
-        <!-- Pillars Section -->
-        <div
-            class="pillars bg-gradient-to-br from-primary-light to-white border-2 border-primary rounded-xl p-6 shadow-md">
-            <div class="icon-container text-primary-dark text-lg font-bold mb-6">
-                <i class='bx bx-buildings'></i>
-                <h4>PILARES FUNDAMENTAIS (Memorização Obrigatória)</h4>
-            </div>
-            <div class="grid gap-3">
-                <div
-                    class="pillar-item flex items-center py-3 px-4 bg-white rounded-lg border-l-4 border-primary shadow-sm">
-                    <i class='bx bx-shield-check text-primary text-lg'></i>
-                    <span>Evitar o recolhimento da moto</span>
-                </div>
-                <div
-                    class="pillar-item flex items-center py-3 px-4 bg-white rounded-lg border-l-4 border-primary shadow-sm">
-                    <i class='bx bx-wrench text-primary text-lg'></i>
-                    <span>Trocar apenas o que for necessário</span>
-                </div>
-                <div
-                    class="pillar-item flex items-center py-3 px-4 bg-white rounded-lg border-l-4 border-primary shadow-sm">
-                    <span>Sempre que possível e seguro, direcionar o cliente para ir até a base</span>
-                </div>
-                <div
-                    class="pillar-item flex items-center py-3 px-4 bg-white rounded-lg border-l-4 border-primary shadow-sm">
-                    <i class='bx bx-list-check text-primary text-lg'></i>
-                    <span>Informar todas as peças trocadas e detalhar no campo "Observação Motorista"</span>
-                </div>
-                <div
-                    class="pillar-item flex items-center py-3 px-4 bg-white rounded-lg border-l-4 border-primary shadow-sm">
-                    <i class='bx bx-chat text-primary text-lg'></i>
-                    <span>Responder ao time de analistas no chat e atender todos os serviços encaminhados</span>
-                </div>
-                <div
-                    class="pillar-item flex items-center py-3 px-4 bg-white rounded-lg border-l-4 border-primary shadow-sm">
-                    <span>Executar serviços apenas com presença do cliente (exceto recolhimentos)</span>
-                </div>
-                <div
-                    class="pillar-item flex items-center py-3 px-4 bg-white rounded-lg border-l-4 border-primary shadow-sm">
-                    <span>Não ultrapassar 90 km/h</span>
-                </div>
-                <div
-                    class="pillar-item flex items-center py-3 px-4 bg-white rounded-lg border-l-4 border-primary shadow-sm">
-                    <span>Ser educado e respeitoso com os clientes</span>
-                </div>
-            </div>
-        </div>
+    <!-- Slide Number Indicator -->
+    <div class="fixed top-6 right-6 bg-black/50 backdrop-blur-lg px-4 py-2 rounded-full">
+        <span id="slideIndicator" class="text-sm font-bold">1 / 12</span>
     </div>
 
-    <!-- Online Course Section -->
-    <div class="section mb-10 p-6 rounded-xl bg-secondary border-l-4 border-primary shadow-sm">
-        <div class="icon-container justify-start text-primary text-xl font-bold mb-6">
-            <i class='bx bx-laptop'></i>
-            <h3>2. Execução do Curso Online</h3>
-        </div>
+    <style>
+        .slide {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            /* Força altura total da viewport */
+        }
 
-        <div
-            class="important-note bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-400 rounded-xl p-6 my-6 shadow-md">
-            <div class="flex items-center gap-3 text-orange-600 font-bold mb-3">
-                <i class='bx bx-error text-xl'></i>
-                <strong class="text-lg">IMPORTANTE:</strong>
-            </div>
-            <p class="text-gray-700 leading-relaxed">
-                Cada colaborador deve completar o curso online seguindo as instruções do documento PDF específico de
-                treinamento no celular. Verifique a conclusão antes de prosseguir.
-            </p>
-        </div>
+        .slide.active {
+            display: flex;
+        }
 
-        <div class="mt-6">
-            <a href="assets/Instruções_Treinamento_celular.pdf" download
-                class="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white px-6 py-3 rounded-lg font-bold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
-                <i class='bx bx-download'></i>
-                <span>Baixar Treinamento Online Gupy</span>
-            </a>
-        </div>
-    </div>
+        .slide-green {
+            background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+            color: #fff;
+        }
 
+        .slide-white {
+            background: #fff;
+            color: #28a745;
+        }
 
-    <div class="section">
-        <h3>📱 3. Comunicação com Cliente e Uso do App</h3>
+        .slide-white .bg-white,
+        .slide-white .bg-white\/10,
+        .slide-white .bg-white\/20 {
+            background: #e8f5e8 !important;
+            color: #28a745 !important;
+        }
 
-        <div class="activity-list">
-            <h4>Módulos de Treinamento:</h4>
-            <div class="activity-item">Comunicação prestativa e educada com clientes</div>
-            <div class="activity-item">Aplicativos da tela inicial do celular de suporte</div>
-            <div class="activity-item">Login e logout no Mottu Serviços</div>
-            <div class="activity-item">Interface do aplicativo e todas as abas (Menu Inicial, Serviços, Extrato)</div>
-            <div class="activity-item">Solicitação de insumos</div>
-            <div class="activity-item">Comunicação com time de analistas</div>
-            <div class="activity-item">Sistema de bonificação e critérios de penalização</div>
-            <div class="activity-item">Utilização da aba "Avisos" para atualizações</div>
-        </div>
-    </div>
+        .slide-green .bg-white,
+        .slide-green .bg-white\/10,
+        .slide-green .bg-white\/20 {
+            background: #fff !important;
+            color: #28a745 !important;
+        }
 
-    <div class="lunch-break">🍽️ INTERVALO PARA ALMOÇO</div>
+        .slide-white .text-green-700,
+        .slide-white .border-green-700 {
+            color: #28a745 !important;
+            border-color: #28a745 !important;
+        }
 
-    <div class="section">
-        <h3>🦺 4. Entrega de EPIs e Cartão Flash</h3>
-        <div class="activity-list">
-            <h4>Checklist de Entrega:</h4>
-            <label class="checklist"><input type="checkbox"> Uniforme completo (calça, colete, bota e camiseta)</label>
-            <label class="checklist"><input type="checkbox"> Cartão flash</label>
-            <label class="checklist"><input type="checkbox"> Verificar tamanhos e condições dos itens</label>
-            <label class="checklist"><input type="checkbox"> Orientar sobre uso obrigatório</label>
-        </div>
-    </div>
+        .slide-green .text-white,
+        .slide-green .border-white {
+            color: #fff !important;
+            border-color: #fff !important;
+        }
 
-    <div class="section">
-        <h3>🔧 5. Montagem de Cabos</h3>
+        input[type="checkbox"] {
+            accent-color: #28a745;
+        }
 
-        <div class="assembly-section activity-list">
-            <h4>🔧 Procedimentos de Montagem:</h4>
-            <div class="activity-item">Montagem do cabo do acelerador</div>
-            <div class="activity-item">Ajuste de folga no manete do acelerador</div>
-            <div class="activity-item">Montagem do cabo do freio dianteiro</div>
-            <div class="activity-item">Regulagem do freio dianteiro</div>
-            <div class="activity-item">Montagem do cabo da embreagem com passagem correta</div>
-            <div class="activity-item">Regulagem da embreagem</div>
-            <div class="activity-item">Regulagem do cabo CBS</div>
-        </div>
-    </div>
+        /* Garantia adicional de centralização para PDF */
+        @media print {
+            .slide {
+                display: flex !important;
+                min-height: 100vh;
+                justify-content: center;
+                align-items: center;
+                page-break-after: always;
+            }
+        }
+    </style>
 
-    <div class="section">
-        <h3>⚡ 6. Componentes do Sistema Elétrico</h3>
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
 
-        <div class="assembly-section activity-list">
-            <h4>🔧 Procedimentos Elétricos:</h4>
-            <div class="activity-item">Troca de bateria</div>
-            <div class="activity-item">Verificação do funcionamento do estator através do farol dianteiro</div>
-            <div class="activity-item">Troca de lâmpada do farol dianteiro</div>
-            <div class="activity-item">Localização e diagnóstico dos fusíveis</div>
-            <div class="activity-item">Verificação de possíveis curtos (especial atenção em curvas dos fios)</div>
-            <div class="activity-item">Teste de faísca</div>
-            <div class="activity-item">Avaliação de bobina, cabo, cachimbo e vela</div>
-            <div class="activity-item">Montagem do conjunto de vela e cachimbo</div>
-            <div class="activity-item">Análise da qualidade da mistura através da vela</div>
-        </div>
-    </div>
+        document.getElementById('totalSlides').textContent = totalSlides;
 
-    <div class="page-break"></div>
-    <div class="day-header">DIA 2 - COMPONENTES MECÂNICOS AVANÇADOS</div>
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
 
-    <div class="section">
-        <h3>🛞 1. Roda Traseira</h3>
+            // Update controls
+            document.getElementById('currentSlide').textContent = index + 1;
+            document.getElementById('slideIndicator').textContent = `${index + 1} / ${totalSlides}`;
 
-        <div class="evaluation-section activity-list">
-            <h4>🔍 Avaliação:</h4>
-            <div class="activity-item">Localizar TWI e verificar desgaste do pneu</div>
-            <div class="activity-item">Avaliar desalinhamento da roda</div>
-            <div class="activity-item">Verificar se a roda está amassada</div>
-            <div class="activity-item">Avaliar prisioneiros da coroa</div>
-            <div class="activity-item">Avaliar porca do prisioneiro</div>
-            <div class="activity-item">Avaliar rolamento com folga</div>
-        </div>
+            // Update progress bar
+            const progress = ((index + 1) / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
 
-        <div class="assembly-section activity-list">
-            <h4>🔧 Montagem:</h4>
-            <div class="activity-item">Colocar coxins da coroa</div>
-            <div class="activity-item">Passar eixo da esquerda para direita</div>
-            <div class="activity-item">Montar esticadores corretamente</div>
-            <div class="activity-item">Montar espaçadores corretamente</div>
-            <div class="activity-item">Ajustar corrente de forma idêntica nos dois lados</div>
-            <div class="activity-item">Apertar porca da flange</div>
-            <div class="activity-item">Finalizar com aperto do eixo</div>
-        </div>
-    </div>
+            // Update button states
+            document.getElementById('prevBtn').style.opacity = index === 0 ? '0.5' : '1';
+            document.getElementById('nextBtn').style.opacity = index === totalSlides - 1 ? '0.5' : '1';
+        }
 
-    <div class="section">
-        <h3>🛞 2. Roda Dianteira</h3>
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (currentSlideIndex < totalSlides - 1) {
+                currentSlideIndex++;
+                showSlide(currentSlideIndex);
+            }
+        });
 
-        <div class="evaluation-section activity-list">
-            <h4>🔍 Avaliação:</h4>
-            <div class="activity-item">Localizar TWI e verificar desgaste do pneu</div>
-            <div class="activity-item">Avaliar desalinhamento da roda</div>
-            <div class="activity-item">Verificar se a roda está amassada</div>
-            <div class="activity-item">Avaliar rolamento com folga</div>
-        </div>
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                showSlide(currentSlideIndex);
+            }
+        });
 
-        <div class="assembly-section activity-list">
-            <h4>🔧 Montagem:</h4>
-            <div class="activity-item">Colocar espaçador na roda</div>
-            <div class="activity-item">Posicionar engrenagem do velocímetro corretamente</div>
-            <div class="activity-item">Passar eixo da esquerda para direita e apertar</div>
-        </div>
-    </div>
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' && currentSlideIndex < totalSlides - 1) {
+                currentSlideIndex++;
+                showSlide(currentSlideIndex);
+            } else if (e.key === 'ArrowLeft' && currentSlideIndex > 0) {
+                currentSlideIndex--;
+                showSlide(currentSlideIndex);
+            }
+        });
 
-    <div class="section">
-        <h3>🛑 3. Freio Traseiro</h3>
+        // Touch/swipe support
+        let startX = 0;
+        let endX = 0;
 
-        <div class="evaluation-section activity-list">
-            <h4>🔍 Avaliação:</h4>
-            <div class="activity-item">Avaliar desgaste da lona de freio</div>
-            <div class="activity-item">Avaliar ajuste do freio</div>
-            <div class="activity-item">Avaliar se pedal ou varão estão tortos</div>
-            <div class="activity-item">Avaliar estrias do eixo came</div>
-            <div class="activity-item">Avaliar funcionamento da mola de retorno</div>
-        </div>
+        document.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
 
-        <div class="assembly-section activity-list">
-            <h4>🔧 Montagem:</h4>
-            <div class="activity-item">Verificar compatibilidade das lonas com a roda</div>
-            <div class="activity-item">Montar lona sem deformar as molas</div>
-            <div class="activity-item">Posicionar alavanca conforme ponto de referência</div>
-            <div class="activity-item">Verificar presença da cupilha</div>
-            <div class="activity-item">Avaliar montagem correta do eixo came (O'ring e arruela)</div>
-            <div class="activity-item">Manter posição original das lonas</div>
-            <div class="activity-item">Ajustar regulagem do freio traseiro</div>
-            <div class="activity-item">Certificar que a roda gira livre</div>
-        </div>
-    </div>
+        document.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
 
-    <div class="section">
-        <h3>🛑 4. Freio Dianteiro</h3>
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = startX - endX;
 
-        <div class="evaluation-section activity-list">
-            <h4>🔍 Avaliação:</h4>
-            <div class="activity-item">Avaliar se o freio está travando ou borrachudo</div>
-            <div class="activity-item">Avaliar desgaste da lona através do visor do espelho</div>
-            <div class="activity-item">Verificar retorno no manete de freio</div>
-            <div class="activity-item">Avaliar desgaste do cabo de aço</div>
-            <div class="activity-item">Avaliar estrias do eixo came</div>
-            <div class="activity-item">Avaliar molas de retorno</div>
-            <div class="activity-item">Avaliar montagem correta do eixo came</div>
-        </div>
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0 && currentSlideIndex < totalSlides - 1) {
+                    // Swipe left - next slide
+                    currentSlideIndex++;
+                    showSlide(currentSlideIndex);
+                } else if (diff < 0 && currentSlideIndex > 0) {
+                    // Swipe right - previous slide
+                    currentSlideIndex--;
+                    showSlide(currentSlideIndex);
+                }
+            }
+        }
 
-        <div class="assembly-section activity-list">
-            <h4>🔧 Montagem:</h4>
-            <div class="activity-item">Verificar compatibilidade das lonas</div>
-            <div class="activity-item">Montar lona sem deformar as molas</div>
-            <div class="activity-item">Manter posição original das lonas</div>
-            <div class="activity-item">Posicionar alavanca conforme ponto de referência</div>
-            <div class="activity-item">Posicionar cabo CBS na parte superior da alavanca</div>
-            <div class="activity-item">Posicionar cabo de freio na parte inferior da alavanca</div>
-            <div class="activity-item">Posicionar engrenagem do velocímetro</div>
-            <div class="activity-item">Checar velocímetro antes do aperto da roda</div>
-            <div class="activity-item">Certificar que a roda gira livre</div>
-        </div>
-    </div>
+        // Initialize
+        showSlide(0);
 
-    <div class="section">
-        <h3>⚙️ 5. Kit Relação</h3>
+        document.getElementById("downloadBtn").addEventListener("click", () => {
+            window.location.href = "/download-pdf";
+        });
 
-        <div class="evaluation-section activity-list">
-            <h4>🔍 Avaliação:</h4>
-            <div class="activity-item">Avaliar dentes e estrias do pinhão</div>
-            <div class="activity-item">Avaliar dentes da coroa</div>
-            <div class="activity-item">Avaliar presença e aperto dos parafusos do pinhão</div>
-            <div class="activity-item">Avaliar aperto da coroa</div>
-            <div class="activity-item">Avaliar folga da corrente</div>
-            <div class="activity-item">Avaliar alinhamento dos esticadores</div>
-        </div>
-
-        <div class="assembly-section activity-list">
-            <h4>🔧 Montagem:</h4>
-            <div class="activity-item">Avaliar posição correta da trava</div>
-            <div class="activity-item">Fixar pinhão com a trava</div>
-            <div class="activity-item">Fixar coroa com porcas flange auto travantes</div>
-            <div class="activity-item">Certificar comprimento adequado dos prisioneiros</div>
-            <div class="activity-item">Utilizar corrente velha para passar a nova</div>
-            <div class="activity-item">Montar trava da corrente na posição correta</div>
-            <div class="activity-item">Certificar regulagens idênticas dos esticadores</div>
-            <div class="activity-item">Ajustar folga da corrente</div>
-            <div class="activity-item">Apertar todas as porcas do conjunto de freio</div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h3>✅ Checklist Final de Treinamento</h3>
-        <div class="activity-list">
-            <label class="checklist"><input type="checkbox"> Colaborador demonstrou compreensão da missão</label>
-            <label class="checklist"><input type="checkbox"> Todos os 8 pilares foram memorizados</label>
-            <label class="checklist"><input type="checkbox"> Curso online concluído com sucesso</label>
-            <label class="checklist"><input type="checkbox"> Aplicativo dominado completamente</label>
-            <label class="checklist"><input type="checkbox"> EPIs entregues e orientações dadas</label>
-            <label class="checklist"><input type="checkbox"> Procedimentos de cabos executados corretamente</label>
-            <label class="checklist"><input type="checkbox"> Sistema elétrico compreendido</label>
-            <label class="checklist"><input type="checkbox"> Rodas dianteira e traseira dominadas</label>
-            <label class="checklist"><input type="checkbox"> Freios dianteiro e traseiro executados</label>
-            <label class="checklist"><input type="checkbox"> Kit relação montado adequadamente</label>
-        </div>
-    </div>
-
-    <div class="important-note">
-        <strong>RESPONSABILIDADE DO LÍDER:</strong> Certifique-se de que cada item foi completamente compreendido antes
-        de avançar. A qualidade do nosso atendimento depende da excelência deste treinamento.
-    </div>
-
-    <!-- PDF Generation Script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-
+    </script>
 </body>
 
 </html>
