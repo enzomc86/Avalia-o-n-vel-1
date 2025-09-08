@@ -154,11 +154,17 @@
                     </p>
                 </div>
 
-                <button
-                    class="bg-white text-orange-800 px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors">
+                <button id="downloadCurso"
+                    class="bg-white text-orange-800 px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors download-curso-btn">
                     <i class='bx bx-download mr-3'></i>
                     Baixar Treinamento Online Gupy
                 </button>
+                <button
+                    class="curso-link-pdf hidden bg-white text-orange-800 px-8 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition-colors ">
+                    <a href="/assets/curso_online.pdf" target="_blank">Acessar
+                        Treinamento Online Gupy</a>
+                </button>
+
             </div>
         </div>
 
@@ -525,6 +531,14 @@
 
         document.getElementById("downloadBtn").addEventListener("click", () => {
             window.location.href = "/download-pdf";
+        });
+        document.getElementById("downloadCurso").addEventListener("click", () => {
+            const link = document.createElement('a');
+            link.href = '/assets/curso_online.pdf';
+            link.download = 'curso_online.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         });
 
     </script>

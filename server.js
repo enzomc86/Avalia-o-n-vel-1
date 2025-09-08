@@ -26,27 +26,26 @@ app.get("/download-pdf", async (req, res) => {
   await page.evaluate(() => {
    const slides = document.querySelectorAll(".slide");
    slides.forEach((s) => {
-    s.style.display = "flex"; // Mantém flex para centralização
+    s.style.display = "flex";
     s.style.position = "relative";
     s.style.height = "100vh";
     s.style.pageBreakAfter = "always";
     s.style.justifyContent = "center";
     s.style.alignItems = "center";
    });
-
-   // CORREÇÃO: Remover completamente o botão do DOM
+   // Remove botão de download do PDF
    const downloadBtn = document.querySelector("#downloadBtn");
-   if (downloadBtn) {
-    downloadBtn.remove(); // Remove completamente do DOM
-   }
-
-   // Remover também os controles de navegação
+   if (downloadBtn) downloadBtn.remove();
+   // Remove botão de download do curso online e mostra link
+   const downloadCursoBtn = document.querySelector(".download-curso-btn");
+   if (downloadCursoBtn) downloadCursoBtn.remove();
+   const cursoLinkPdf = document.querySelector(".curso-link-pdf");
+   if (cursoLinkPdf) cursoLinkPdf.classList.remove("hidden");
+   // Remover controles de navegação
    const navControls = document.querySelector(".fixed.bottom-6");
    if (navControls) navControls.remove();
-
    const progressBar = document.querySelector(".fixed.top-0");
    if (progressBar) progressBar.remove();
-
    const slideIndicator = document.querySelector(".fixed.top-6.right-6");
    if (slideIndicator) slideIndicator.remove();
   });
