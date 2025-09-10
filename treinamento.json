@@ -1,0 +1,521 @@
+{
+ "titulo": "MOTTU FIELD TRAINING",
+ "subtitulo": "TREINAMENTO TÉCNICO EM MANUTENÇÃO DE MOTOCICLETAS",
+ "descricao": "Programa completo de capacitação técnica para profissionais de field service, abrangendo manutenção, reparo e assistência técnica de motocicletas Mottu. Este treinamento combina conhecimentos teóricos e práticos essenciais para prestação de serviços de qualidade em campo.",
+ "autores": [
+  {
+   "nome": "Equipe Técnica Mottu",
+   "cargo": "Especialistas em Manutenção de Motocicletas",
+   "empresa": "Mottu"
+  }
+ ],
+ "carga_horaria_total": "23h30min",
+ "cronograma": {
+  "duracao_total": "2 dias",
+  "horas_por_dia": "12 horas",
+  "formato": "Intensivo - Manual para líderes",
+  "modalidade_treinamento": "Padronização do onboarding e nível 1 de suporte de campo",
+  "estrutura_dias": {
+   "dia_1": {
+    "foco": "Módulos teóricos e fundamentos",
+    "modulos": [1, 2, 3, 4, 5, 6],
+    "intervalos": ["Almoço - pausa para refeição e descanso"]
+   },
+   "dia_2": {
+    "foco": "Ciclística básica - módulos práticos avançados",
+    "modulos": [7, 8, 9, 10, 11],
+    "intervalos": ["Almoço - continuação das atividades práticas"]
+   }
+  }
+ },
+ "modalidade": "Misto (Teórico e Prático)",
+ "nivel": "Intermediário a Avançado",
+ "publico_alvo": "Técnicos de field service, mecânicos e profissionais de manutenção de motocicletas",
+ "missao": "Garantir excelência no atendimento técnico em campo, focando na satisfação do cliente e na qualidade dos serviços prestados.",
+ "missao_detalhada": "Vocês serão responsáveis por realizar a manutenção emergencial nas motos dos nossos clientes, normalmente eles estarão em situações desagradáveis como: chuva, sol, frio, atrasado para uma entrega ou compromisso e por isso é muito importante que vocês sejam educados e compreensivos com eles. O propósito de vocês é maior que realizar manutenções nas motos, vocês fortalecem o corre de milhares de brasileiros que em muitos casos são marginalizados ou esquecidos pela sociedade.",
+ "pilares_operacionais": [
+  "Evitar o recolhimento da moto",
+  "Trocar apenas o que for necessário",
+  "Direcionar cliente para a base quando possível e seguro",
+  "Informar todas as peças trocadas no serviço",
+  "Preencher campo 'Observação Motorista' com detalhes",
+  "Responder ao time de analistas no chat",
+  "Executar serviços apenas com presença do cliente, exceto recolhimentos",
+  "Não ultrapassar velocidade de 90 km/h",
+  "Manter educação e respeito com os clientes"
+ ],
+ "icones": {
+  "geral": {
+   "tempo": "bx-time",
+   "objetivo": "bx-target-lock",
+   "tipo": "bx-cog",
+   "recursos": "bx-package",
+   "avaliacao": "bx-medal",
+   "certificacao": "bx-certification",
+   "procedimentos": "bx-list-check",
+   "checklist": "bx-check-double",
+   "download": "bx-download",
+   "informacao": "bx-info-circle",
+   "calendario": "bx-calendar",
+   "check": "bx-check-circle",
+   "usuario": "bx-user-voice",
+   "grupo": "bx-group",
+   "localizacao": "bx-location-plus"
+  },
+  "sistemas": {
+   "eletrico": "bx-bolt",
+   "alimentacao": "bx-battery",
+   "iluminacao": "bx-bulb",
+   "ignicao": "bx-fire",
+   "aceleracao": "bx-tachometer",
+   "frenagem": "bx-disc",
+   "embreagem": "bx-cog",
+   "roda": "bx-cog",
+   "manutencao": "bx-wrench",
+   "comunicacao": "bx-chat",
+   "uniforme": "bx-closet",
+   "ferramentas": "bx-credit-card",
+   "engrenagens": "bx-cogs"
+  },
+  "cores_contexto": {
+   "primary": "Verde (#22c55e) - Cor principal da marca",
+   "white": "Branco - Texto principal",
+   "amber": "Âmbar - Avisos e alertas",
+   "blue": "Azul - Informações secundárias"
+  }
+ },
+ "modulos": [
+  {
+   "numero": 1,
+   "titulo": "Missão e Pilares Operacionais",
+   "icone": "bx-list-check",
+   "duracao": "30min",
+   "tipo": "Teórico",
+   "objetivo": "Apresentar a missão da empresa e estabelecer os pilares operacionais obrigatórios para todos os técnicos de field service.",
+   "topicos": [
+    "Missão da empresa",
+    "Valores e princípios",
+    "Pilares operacionais obrigatórios",
+    "Código de conduta",
+    "Responsabilidades do técnico de campo"
+   ],
+   "recursos_necessarios": [
+    "Apresentação digital",
+    "Manual de conduta",
+    "Checklist de pilares operacionais"
+   ],
+   "avaliacao": {
+    "tipo": "Questionário teórico",
+    "nota_minima": 8.0
+   }
+  },
+  {
+   "numero": 2,
+   "titulo": "Curso Online - Certificação Digital",
+   "icone": "bx-computer",
+   "duracao": "3h00min",
+   "tipo": "Prático Online",
+   "objetivo": "Obter certificação digital através de curso online prático com acompanhamento passo a passo.",
+   "topicos": [
+    "Execução passo a passo do curso online",
+    "Validação de lições",
+    "Certificação digital",
+    "Acompanhamento individual"
+   ],
+   "procedimentos": [
+    "Acompanhar execução passo a passo",
+    "Validar nota mínima de 8 em todas as lições",
+    "Validar conclusão do curso por cada participante"
+   ],
+   "recursos_necessarios": [
+    "PDF de apoio específico",
+    "Computador/dispositivo com acesso à internet",
+    "Acompanhamento individual de cada participante"
+   ],
+   "avaliacao": {
+    "tipo": "Certificação obrigatória online",
+    "nota_minima": 8.0,
+    "observacoes": "Todos os participantes devem completar com aprovação"
+   }
+  },
+  {
+   "numero": 3,
+   "titulo": "Comunicação e Uso de Aplicativos",
+   "icone": "bx-chat",
+   "duracao": "30min",
+   "tipo": "Teórico + Prático",
+   "objetivo": "Capacitar os técnicos no uso correto de ferramentas de comunicação e aplicativos necessários para o trabalho em campo.",
+   "topicos": [
+    "Comunicação com clientes",
+    "Uso de aplicativos corporativos",
+    "Protocolos de comunicação",
+    "Gestão de ocorrências",
+    "Relatórios de campo",
+    "Sistema de bonificação",
+    "Critérios de bonificação"
+   ],
+   "recursos_necessarios": [
+    "Smartphones/tablets",
+    "Aplicativos corporativos instalados",
+    "Manual de comunicação",
+    "Exemplos práticos de situações"
+   ],
+   "avaliacao": {
+    "tipo": "Prática supervisionada",
+    "nota_minima": 8.0
+   }
+  },
+  {
+   "numero": 4,
+   "titulo": "Entrega de Equipamentos",
+   "icone": "bx-package",
+   "duracao": "30min",
+   "tipo": "Prático",
+   "objetivo": "Ensinar os procedimentos corretos para entrega de uniformes e equipamentos técnicos aos colaboradores.",
+   "topicos": [
+    "Verificação de tamanhos individuais",
+    "Teste de ajustes e conforto",
+    "Orientações sobre uso e conservação",
+    "Registro de entrega e confirmação"
+   ],
+   "equipamentos_entregues": {
+    "uniforme_completo": {
+     "icone": "bx-closet",
+     "itens": ["Calça", "Colete", "Bota", "Camiseta"]
+    },
+    "equipamentos_tecnicos": {
+     "icone": "bx-credit-card",
+     "itens": [
+      "Cartão Flash",
+      "Kit de Ferramentas Básicas",
+      "Manual de Procedimentos"
+     ]
+    }
+   },
+   "procedimentos": [
+    "Verificação de tamanhos individuais",
+    "Teste de ajustes e conforto",
+    "Orientações sobre uso e conservação",
+    "Registro de entrega e confirmação"
+   ],
+   "recursos_necessarios": [
+    "Uniformes de diversos tamanhos",
+    "Equipamentos técnicos",
+    "Formulários de entrega",
+    "Lista de verificação"
+   ],
+   "avaliacao": {
+    "tipo": "Checklist de procedimentos",
+    "nota_minima": 8.0
+   }
+  },
+  {
+   "numero": 5,
+   "titulo": "Montagem de Cabos",
+   "icone": "bx-wrench",
+   "duracao": "3h00min",
+   "tipo": "Prático Técnico",
+   "objetivo": "Capacitar na montagem e regulagem de cabos dos sistemas de aceleração, frenagem e embreagem.",
+   "topicos": [
+    "Sistema de Aceleração",
+    "Sistema de Frenagem",
+    "Sistema de Embreagem"
+   ],
+   "sistemas": {
+    "aceleracao": {
+     "icone": "bx-tachometer",
+     "procedimentos": [
+      "Montagem do cabo do acelerador",
+      "Ajuste de folga no manete do acelerador"
+     ]
+    },
+    "frenagem": {
+     "icone": "bx-disc",
+     "procedimentos": [
+      "Montagem do cabo do freio dianteiro",
+      "Regulagem do freio dianteiro"
+     ]
+    },
+    "embreagem": {
+     "icone": "bx-cog",
+     "procedimentos": [
+      "Montagem do cabo da embreagem",
+      "Regulagem da embreagem",
+      "Regulagem do cabo CBS"
+     ]
+    }
+   },
+   "recursos_necessarios": [
+    "Motocicletas para prática",
+    "Ferramentas específicas",
+    "Cabos novos e usados para comparação",
+    "Checklist de procedimentos"
+   ],
+   "avaliacao": {
+    "tipo": "Prática supervisionada com avaliação técnica",
+    "nota_minima": 8.0
+   }
+  },
+  {
+   "numero": 6,
+   "titulo": "Componentes do Sistema Elétrico",
+   "icone": "bx-bolt",
+   "duracao": "4h00min",
+   "tipo": "Prático Técnico",
+   "objetivo": "Capacitar no diagnóstico e reparo de componentes do sistema elétrico da motocicleta.",
+   "topicos": [
+    "Sistema de Alimentação",
+    "Sistema de Iluminação",
+    "Sistema de Ignição"
+   ],
+   "sistemas": {
+    "alimentacao": {
+     "icone": "bx-battery",
+     "procedimentos": [
+      "Troca de bateria",
+      "Verificação do funcionamento do estator via farol dianteiro"
+     ]
+    },
+    "iluminacao": {
+     "icone": "bx-bulb",
+     "procedimentos": [
+      "Troca de lâmpada do farol dianteiro",
+      "Verificação de conectores"
+     ]
+    },
+    "ignicao": {
+     "icone": "bx-fire",
+     "procedimentos": [
+      "Localização e diagnóstico de fusíveis",
+      "Teste de faísca"
+     ]
+    }
+   },
+   "recursos_necessarios": [
+    "Motocicletas para prática",
+    "Multímetro",
+    "Componentes elétricos diversos",
+    "Ferramentas específicas para elétrica",
+    "Manual de esquemas elétricos"
+   ],
+   "avaliacao": {
+    "tipo": "Diagnóstico prático supervisionado",
+    "nota_minima": 8.0
+   }
+  },
+  {
+   "numero": 7,
+   "titulo": "Roda Traseira",
+   "icone": "bx-cog",
+   "duracao": "2h00min",
+   "tipo": "Prático Técnico",
+   "objetivo": "Ensinar procedimentos de manutenção e reparo da roda traseira da motocicleta.",
+   "topicos": [
+    "Desmontagem da roda traseira",
+    "Troca de pneu traseiro",
+    "Balanceamento",
+    "Montagem e ajustes finais"
+   ],
+   "recursos_necessarios": [
+    "Motocicletas para prática",
+    "Ferramentas para roda",
+    "Pneus novos",
+    "Equipamento de balanceamento",
+    "Torquímetro"
+   ],
+   "avaliacao": {
+    "tipo": "Prática supervisionada",
+    "nota_minima": 8.0
+   }
+  },
+  {
+   "numero": 8,
+   "titulo": "Roda Dianteira",
+   "icone": "bx-cog",
+   "duracao": "2h00min",
+   "tipo": "Prático Técnico",
+   "objetivo": "Ensinar procedimentos de manutenção e reparo da roda dianteira da motocicleta.",
+   "topicos": [
+    "Desmontagem da roda dianteira",
+    "Troca de pneu dianteiro",
+    "Alinhamento",
+    "Montagem e verificações de segurança"
+   ],
+   "recursos_necessarios": [
+    "Motocicletas para prática",
+    "Ferramentas específicas",
+    "Pneus novos",
+    "Equipamento de alinhamento",
+    "Instrumentos de medição"
+   ],
+   "avaliacao": {
+    "tipo": "Prática supervisionada",
+    "nota_minima": 8.0
+   }
+  },
+  {
+   "numero": 9,
+   "titulo": "Freio Traseiro",
+   "icone": "bx-disc",
+   "duracao": "3h00min",
+   "tipo": "Prático Técnico",
+   "objetivo": "Capacitar na manutenção completa do sistema de freio traseiro.",
+   "topicos": [
+    "Diagnóstico do sistema de freio traseiro",
+    "Troca de pastilhas de freio",
+    "Sangria do sistema",
+    "Ajustes e calibragem",
+    "Testes de funcionamento"
+   ],
+   "recursos_necessarios": [
+    "Motocicletas para prática",
+    "Pastilhas de freio",
+    "Fluido de freio",
+    "Ferramentas específicas",
+    "Equipamento de sangria"
+   ],
+   "avaliacao": {
+    "tipo": "Teste prático de funcionamento",
+    "nota_minima": 8.0
+   }
+  },
+  {
+   "numero": 10,
+   "titulo": "Freio Dianteiro",
+   "icone": "bx-disc",
+   "duracao": "2h00min",
+   "tipo": "Prático Técnico",
+   "objetivo": "Capacitar na manutenção completa do sistema de freio dianteiro.",
+   "topicos": [
+    "Diagnóstico do sistema de freio dianteiro",
+    "Troca de pastilhas de freio",
+    "Verificação de discos",
+    "Sangria e ajustes",
+    "Teste de segurança"
+   ],
+   "recursos_necessarios": [
+    "Motocicletas para prática",
+    "Pastilhas de freio",
+    "Fluido de freio",
+    "Ferramentas de precisão",
+    "Calibradores"
+   ],
+   "avaliacao": {
+    "tipo": "Teste prático de segurança",
+    "nota_minima": 8.0
+   }
+  },
+  {
+   "numero": 11,
+   "titulo": "Kit Relação",
+   "icone": "bx-cogs",
+   "duracao": "4h00min",
+   "tipo": "Prático Técnico",
+   "objetivo": "Ensinar a manutenção completa do kit relação (corrente, coroa e pinhão).",
+   "topicos": [
+    "Diagnóstico do kit relação",
+    "Desmontagem segura",
+    "Troca de corrente",
+    "Troca de coroa e pinhão",
+    "Ajuste de tensão",
+    "Lubrificação e acabamento"
+   ],
+   "recursos_necessarios": [
+    "Motocicletas para prática",
+    "Kit relação completo",
+    "Ferramentas específicas",
+    "Lubrificantes",
+    "Instrumentos de medição de tensão"
+   ],
+   "avaliacao": {
+    "tipo": "Prática completa supervisionada",
+    "nota_minima": 8.0
+   }
+  }
+ ],
+ "requisitos_certificacao": {
+  "nota_minima_geral": 8.0,
+  "participacao_obrigatoria": "100% dos módulos",
+  "avaliacao_pratica": "Aprovação em todos os módulos práticos",
+  "certificacao_digital": "Conclusão obrigatória do curso online"
+ },
+ "metodologia": {
+  "abordagem": "Aprendizagem prática com supervisão técnica",
+  "recursos": "Motocicletas reais, ferramentas profissionais, simulações práticas",
+  "acompanhamento": "Individual e em grupo",
+  "validacao": "Testes práticos e teóricos contínuos"
+ },
+ "observacoes": [
+  "Todos os módulos práticos devem ser realizados com supervisão",
+  "Uso obrigatório de EPIs durante as práticas",
+  "Material de apoio será fornecido para cada módulo",
+  "Certificação válida por 2 anos",
+  "Reciclagem anual recomendada"
+ ],
+ "alertas_seguranca": [
+  "IMPORTANTE: Verificar tamanhos e ajustes de equipamentos individualmente",
+  "ATENÇÃO ESPECIAL: A sequência de aperto é fundamental para garantir a segurança",
+  "DICA IMPORTANTE: O alinhamento correto da roda dianteira é fundamental para a segurança",
+  "SEGURANÇA CRÍTICA: O sistema de freio traseiro é fundamental para a segurança. Nunca deixar de testar após manutenção",
+  "ATENÇÃO ESPECIAL: Verificar sempre o funcionamento do freio dianteiro antes de liberar a motocicleta"
+ ],
+ "orientacoes_para_lideres": {
+  "antes_do_treinamento": [
+   "Preparar todos os materiais e equipamentos necessários",
+   "Verificar disponibilidade de motocicletas para prática",
+   "Organizar espaço adequado para atividades teóricas e práticas",
+   "Confirmar presença de todos os participantes"
+  ],
+  "durante_o_treinamento": [
+   "Garantir que cada participante complete todos os módulos",
+   "Supervisionar atentamente as atividades práticas",
+   "Validar o aprendizado através de avaliações contínuas",
+   "Manter registro detalhado do progresso individual"
+  ],
+  "apos_cada_etapa": [
+   "Verificar compreensão dos conceitos apresentados",
+   "Aplicar avaliações práticas quando necessário",
+   "Documentar aprovação ou necessidade de reforço",
+   "Providenciar feedback construtivo aos participantes"
+  ],
+  "responsabilidades": [
+   "Seguir rigorosamente os procedimentos descritos no manual",
+   "Garantir padronização em todas as filiais",
+   "Documentar desvios ou adaptações necessárias",
+   "Reportar resultados para a gestão superior"
+  ]
+ },
+ "criterios_aprovacao": {
+  "nota_minima_teorica": 8.0,
+  "aprovacao_pratica": "Demonstração satisfatória de todas as habilidades técnicas",
+  "presenca_obrigatoria": "100% dos módulos",
+  "certificacao_digital": "Conclusão obrigatória com nota mínima 8.0",
+  "avaliacao_continua": "Supervisão constante durante atividades práticas",
+  "criterios_especificos": [
+   "Demonstrar conhecimento dos pilares operacionais",
+   "Executar procedimentos técnicos com segurança",
+   "Mostrar habilidades de comunicação adequadas",
+   "Comprovar uso correto de equipamentos e ferramentas"
+  ]
+ },
+ "recursos_tecnicos": {
+  "biblioteca_icones": "Boxicons (https://boxicons.com/)",
+  "framework_css": "Tailwind CSS",
+  "paleta_cores": {
+   "fundo": "#030712 (gray-950)",
+   "texto": "#ffffff (white)",
+   "destaque": "#22c55e (green-500)",
+   "secundario": "#6b7280 (gray-500)"
+  },
+  "tipografia": "Font family system fonts com fallback"
+ },
+ "apresentacao_manual": {
+  "proposito": "Este manual foi desenvolvido para padronizar o treinamento de onboarding e nível 1 de suporte de campo da empresa Mottu em todas as filiais da companhia.",
+  "publico_lider": "Como líder, você é responsável por garantir que cada colaborador do time receba uma capacitação completa e consistente, seguindo rigorosamente os procedimentos aqui descritos.",
+  "navegacao": {
+   "slides_total": 22,
+   "controles": "Navegação por setas, teclado (setas/espaço), touch/swipe",
+   "recursos": "Barra de progresso, indicador de slide, botão download PDF"
+  }
+ }
+}

@@ -25,22 +25,26 @@ app.get("/download-pdf", async (req, res) => {
   // Forçar todos os slides a ficarem visíveis (um por página) e esconder botão de download
   await page.evaluate(() => {
    const slides = document.querySelectorAll(".slide");
-   slides.forEach((s) => {
-    s.style.display = "flex";
-    s.style.position = "relative";
-    s.style.height = "100vh";
-    s.style.pageBreakAfter = "always";
-    s.style.justifyContent = "center";
-    s.style.alignItems = "center";
+   slides.forEach((slide, index) => {
+    // Remover posicionamento absoluto e tornar cada slide uma página
+    slide.style.position = "relative";
+    slide.style.opacity = "1";
+    slide.style.visibility = "visible";
+    slide.style.display = "flex";
+    slide.style.height = "100vh";
+    slide.style.pageBreakAfter = "always";
+    slide.style.justifyContent = "center";
+    slide.style.alignItems = "center";
+    slide.style.flexDirection = "column";
+
+    // Remover a classe active de todos e adicionar em todos
+    slide.classList.remove("active");
    });
+
    // Remove botão de download do PDF
    const downloadBtn = document.querySelector("#downloadBtn");
    if (downloadBtn) downloadBtn.remove();
-   // Remove botão de download do curso online e mostra link
-   const downloadCursoBtn = document.querySelector(".download-curso-btn");
-   if (downloadCursoBtn) downloadCursoBtn.remove();
-   const cursoLinkPdf = document.querySelector(".curso-link-pdf");
-   if (cursoLinkPdf) cursoLinkPdf.classList.remove("hidden");
+
    // Remover controles de navegação
    const navControls = document.querySelector(".fixed.bottom-6");
    if (navControls) navControls.remove();
